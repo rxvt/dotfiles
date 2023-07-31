@@ -110,8 +110,8 @@ alias grep="rg"
 alias vim="nvim"
 
 # Created by `pipx` on 2022-10-28 04:02:07
-export PATH="$PATH:/Users/shane/.local/bin"
-DEFAULT_USER="shane"
+export PATH="$PATH:$HOME/.local/bin"
+DEFAULT_USER=$USER
 
 ## Customisations
 
