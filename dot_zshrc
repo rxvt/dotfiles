@@ -107,7 +107,10 @@ fi
 alias cat="bat"
 alias grep="rg"
 alias vim="nvim"
+alias ca="chezmoi apply"
 alias ce="chezmoi edit"
+alias cv="chezmoi verify"
+alias ccd="chezmoi cd"
 
 ## Customisations
 
