@@ -46,8 +46,7 @@ ZSH_THEME="agnoster"
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
 # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -73,7 +72,7 @@ NVM_HOMEBREW=$(brew --prefix nvm)
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git aws brew direnv pyenv poetry nvm)
+plugins=(aws brew direnv git nvm poetry pyenv ripgrep)
 
 
 source $ZSH/oh-my-zsh.sh
@@ -104,19 +103,34 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# aliases
+# Aliases
 alias cat="bat"
 alias grep="rg"
 alias vim="nvim"
+alias ce="chezmoi edit"
+
+## Customisations
 
 # Created by `pipx` on 2022-10-28 04:02:07
 export PATH="$PATH:$HOME/.local/bin"
+
+# Stop the hostname appearing in the prompt
 DEFAULT_USER=$USER
 
-## Customisations
+# Set Bat theme
+export BAT_THEME="Nord"
 
 # Only press enter once when I'm happy with my selection
 bindkey -M menuselect '^M' .accept-line
 
 # On an ambiguous completion, automatically list choices when the completion function is called twice in succession.
 setopt BASH_AUTO_LIST
+
+# Enable option stacking for Docker
+zstyle ':completion:*:*:docker:*' optional-stacking yes
+zstyle ':completion:*:*:docker-:*' optional-stacking yes
+
+# Work
+if [ -f $HOME/.zsh_work ]; then
+  source $HOME/.zsh_work
+fi
