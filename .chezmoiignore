@@ -1,5 +1,5 @@
 LICENSE
 README.md
-{{- if ne .chezmoi.username "sanderson" }}
+{{- if .work }}
 .zsh_work
 {{- end }}

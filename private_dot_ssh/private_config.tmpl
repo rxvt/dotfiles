@@ -1,17 +1,18 @@
 Host *
     UseKeychain yes
 
-{{- if ne .chezmoi.username "sanderson" }}
+{{ if not .work -}}
 Host osmc
     HostName osmc
     User osmc
 
-{{- if eq .chezmoi.os "darwin" }}
+{{ if eq .chezmoi.os "darwin" -}}
 Host *
   IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 {{- end }}
 {{- end}}
 
-{{- if eq .chezmoi.username "sanderson" }}
+{{ if .work -}}
+# work stuff goes here
 {{- end}}
 
