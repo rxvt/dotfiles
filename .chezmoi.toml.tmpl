@@ -1,3 +1,7 @@
 [edit]
 apply = true
 watch = true
+
+[data]
+{{- $work := promptBoolOnce . "work" "Is this a work machine" }}
+work = {{ $work }}
