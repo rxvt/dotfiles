@@ -1,5 +1,5 @@
 LICENSE
 README.md
-{{- if .work }}
+{{ if eq .work false -}}
 .zsh_work
 {{- end }}
