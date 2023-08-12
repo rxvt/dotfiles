@@ -109,6 +109,8 @@ fi
 
 # Aliases
 alias cat="bat"
+alias ls="exa"
+alias ll="exa -l"
 alias grep="rg"
 alias vim="nvim"
 alias ca="chezmoi apply"
