@@ -137,3 +137,5 @@ setopt BASH_AUTO_LIST
 zstyle ':completion:*:*:docker:*' optional-stacking yes
 zstyle ':completion:*:*:docker-:*' optional-stacking yes
 
+# Make bat work properly as Midnight Commander pager
+VIEWER="${HOME}/.local/bin/mc_pager"
