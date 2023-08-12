@@ -139,3 +139,8 @@ zstyle ':completion:*:*:docker-:*' optional-stacking yes
 
 # Make bat work properly as Midnight Commander pager
 VIEWER="${HOME}/.local/bin/mc_pager"
+
+# Nord dircolors theme
+if [[ -f "${HOME}/.dir_colors" ]]; then
+  eval $(/opt/homebrew/opt/coreutils/libexec/gnubin/dircolors ~/.dir_colors)
+fi
