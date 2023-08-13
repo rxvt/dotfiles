@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+/opt/homebrew/opt/syncthing/bin/syncthing -no-browser -no-restart
