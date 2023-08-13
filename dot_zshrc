@@ -118,6 +118,7 @@ alias caa="chezmoi add"
 alias ce="chezmoi edit"
 alias cv="chezmoi verify"
 alias ccd="chezmoi cd"
+alias mc="VIEWER=mc_pager mc"
 
 ## Customisations
 
@@ -139,9 +140,6 @@ setopt BASH_AUTO_LIST
 # Enable option stacking for Docker
 zstyle ':completion:*:*:docker:*' optional-stacking yes
 zstyle ':completion:*:*:docker-:*' optional-stacking yes
-
-# Make bat work properly as Midnight Commander pager
-VIEWER="${HOME}/.local/bin/mc_pager"
 
 # Nord dircolors theme
 if [[ -f "${HOME}/.dir_colors" ]]; then
