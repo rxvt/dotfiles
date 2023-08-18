@@ -119,6 +119,7 @@ alias ce="chezmoi edit"
 alias cv="chezmoi verify"
 alias ccd="chezmoi cd"
 alias mc="VIEWER=mc_pager mc"
+alias fzfp="fzf --preview 'bat --color=always {}'"
 
 ## Customisations
 
