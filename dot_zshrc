@@ -146,3 +146,6 @@ zstyle ':completion:*:*:docker-:*' optional-stacking yes
 if [[ -f "${HOME}/.dir_colors" ]]; then
   eval $(/opt/homebrew/opt/coreutils/libexec/gnubin/dircolors ~/.dir_colors)
 fi
+
+# Zoxide
+eval "$(zoxide init --cmd cd zsh)"
