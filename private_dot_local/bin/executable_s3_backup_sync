@@ -2,7 +2,7 @@
 
 SOURCE_DIR="/Users/shane/Music/Collection/"
 
-/opt/homebrew/bin/rclone copy \
+rclone copy \
 --no-update-modtime \
 --fast-list \
 --exclude ".DS_Store" \
@@ -10,3 +10,15 @@ SOURCE_DIR="/Users/shane/Music/Collection/"
 --verbose \
 "$SOURCE_DIR" \
 sanderson-backup:sanderson-backups/music/Collection
+
+
+SOURCE_DIR="/Users/shane/Music/DJ/"
+
+rclone copy \
+--no-update-modtime \
+--fast-list \
+--exclude ".DS_Store" \
+--progress \
+--verbose \
+"$SOURCE_DIR" \
+sanderson-backup:sanderson-backups/music/DJ
