@@ -45,5 +45,22 @@ set -g @jump-key ','
 # Sane window renaming binding
 bind-key r command-prompt -I "#W" "rename-window '%%'"
 
+{{ if eq .chezmoi.os "linux" -}}
+# Linux tab bindings
+bind -n M-] select-window -n
+bind -n M-[ select-window -p
+bind -n M-t new-window
+{{- end }}
+
+# Sane mouse scrolling
+# https://superuser.com/questions/209437/how-do-i-scroll-in-tmux
+set -g mouse on
+
+# Switch to last active window
+bind C-Space last-window
+
+# Aggresive resize
+setw -g aggressive-resize on
+
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'

@@ -65,7 +65,14 @@ COMPLETION_WAITING_DOTS="true"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # NVM
+{{- if eq .chezmoi.os "darwin" -}}
 NVM_HOMEBREW=$(brew --prefix nvm)
+{{ end -}}
+
+# Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -108,7 +115,11 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Aliases
+{{- if eq .chezmoi.os "darwin" -}}
 alias cat="bat"
+{{ else }}
+alias cat="batcat"
+{{ end -}}
 alias ls="exa"
 alias ll="exa -l"
 alias grep="rg"
@@ -144,7 +155,11 @@ zstyle ':completion:*:*:docker-:*' optional-stacking yes
 
 # Nord dircolors theme
 if [[ -f "${HOME}/.dir_colors" ]]; then
-  eval $(/opt/homebrew/opt/coreutils/libexec/gnubin/dircolors ~/.dir_colors)
+  {{- if eq .chezmoi.os "darwin" -}}
+      eval $(/opt/homebrew/opt/coreutils/libexec/gnubin/dircolors ~/.dir_colors)
+  {{ else }}
+      eval $(/usr/bin/dircolors ~/.dir_colors)
+  {{ end -}}	
 fi
 
 # Zoxide
