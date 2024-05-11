@@ -115,7 +115,7 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Aliases
-{{- if eq .chezmoi.os "darwin" -}}
+{{ if eq .chezmoi.os "darwin" -}}
 alias cat="bat"
 {{ else }}
 alias cat="batcat"
@@ -155,11 +155,11 @@ zstyle ':completion:*:*:docker-:*' optional-stacking yes
 
 # Nord dircolors theme
 if [[ -f "${HOME}/.dir_colors" ]]; then
-  {{- if eq .chezmoi.os "darwin" -}}
+  {{ if eq .chezmoi.os "darwin" -}}
       eval $(/opt/homebrew/opt/coreutils/libexec/gnubin/dircolors ~/.dir_colors)
-  {{ else }}
+  {{- else -}}
       eval $(/usr/bin/dircolors ~/.dir_colors)
-  {{ end -}}	
+  {{- end }}
 fi
 
 # Zoxide
