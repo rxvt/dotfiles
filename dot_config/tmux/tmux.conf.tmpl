@@ -62,5 +62,8 @@ bind C-Space last-window
 # Aggresive resize
 setw -g aggressive-resize on
 
+# URL Launcher
+bind-key C-u run-shell -b "tmux capture-pane -J -p | grep -oE '(https?):\/\/.*[^>]' | fzf-tmux -d20 --multi --bind alt-a:select-all,alt-d:deselect-all | xargs open"
+
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
