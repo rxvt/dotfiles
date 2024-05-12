@@ -10,6 +10,7 @@ cache = "/Users/shane/Library/Caches/hatch"
 
 [dirs.env]
 virtual = ".venv"
+pip-compile = ".venv"
 
 [projects]
 
