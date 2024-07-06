@@ -1,0 +1,44 @@
+mode = "local"
+project = ""
+shell = ""
+
+[dirs]
+project = []
+python = "isolated"
+{{ if eq .chezmoi.os "darwin" -}}
+data = "{{ .chezmoi.homeDir }}/Library/Application Support/hatch"
+cache = "{{ .chezmoi.homeDir }}/Library/Caches/hatch"
+{{ end }}
+
+[dirs.env]
+virtual = ".venv"
+pip-compile = ".venv"
+
+[projects]
+
+[publish.index]
+repo = "main"
+
+[template]
+name = "rxvt"
+email = "17208811+rxvt@users.noreply.github.com"
+
+[template.licenses]
+headers = true
+default = [
+    "MIT",
+]
+
+[template.plugins.default]
+tests = true
+ci = false
+src-layout = true
+
+[terminal.styles]
+info = "bold"
+success = "bold cyan"
+error = "bold red"
+warning = "bold yellow"
+waiting = "bold magenta"
+debug = "bold"
+spinner = "simpleDotsScrolling"
