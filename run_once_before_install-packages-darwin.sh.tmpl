@@ -63,4 +63,22 @@ cask "homebrew/cask/spotify"
 cask "homebrew/cask/vlc"
 cask "homebrew/cask/wireshark"
 EOF
+
+# A lot of these taken from https://macos-defaults.com/
+
+# Set function keys to work as standard function keys
+defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
+
+# Show all filename extensions
+defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true" && killall Finder
+
+# Set each display to have separate spaces
+defaults write com.apple.spaces "spans-displays" -bool "false" && killall SystemUIServer
+
+# Disable double space period
+defaults write NSGlobalDomain "NSAutomaticPeriodSubstitutionEnabled" -bool false
+
+# Enable key repeat for VSCode
+# Taken from https://github.com/VSCodeVim/Vim
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 {{ end -}}
