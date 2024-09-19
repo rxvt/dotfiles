@@ -9,8 +9,8 @@ set -g @plugin 'omerxx/tmux-floax'
 
 # Enable 24bit colour
 # https://github.com/tmux/tmux/wiki/FAQ#how-do-i-use-rgb-colour
-#set -as terminal-features ",xterm*:RGB"
 set -as terminal-features ",xterm*:Tc"
+set -as terminal-features ",xterm*:RGB"
 
 # Rebind prefix to ctrl-space
 unbind C-b
