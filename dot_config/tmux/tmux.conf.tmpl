@@ -1,8 +1,10 @@
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-yank'
 set -g @plugin "arcticicestudio/nord-tmux"
 set -g @plugin 'schasse/tmux-jump'
+set -g @plugin 'omerxx/tmux-sessionx'
 
 # Enable 24bit colour
 # https://github.com/tmux/tmux/wiki/FAQ#how-do-i-use-rgb-colour
@@ -37,7 +39,10 @@ bind -n -r C-l select-pane -R
 bind C-r source-file ~/.config/tmux/tmux.conf \; display "Configuration reloaded!"
 
 # Use * to copy word under cursor
-bind-key -T copy-mode-vi * send-keys -X select-word
+#bind-key -T copy-mode-vi * send-keys -X select-word
+
+# use vim keybinding in copy mode
+setw -g mode-keys vi
 
 # vim-like easymotion style navigation
 set -g @jump-key ','
@@ -45,12 +50,11 @@ set -g @jump-key ','
 # Sane window renaming binding
 bind-key r command-prompt -I "#W" "rename-window '%%'"
 
-{{ if eq .chezmoi.os "linux" -}}
-# Linux tab bindings
-bind -n M-] select-window -n
-bind -n M-[ select-window -p
-bind -n M-t new-window
-{{- end }}
+# use system clipboard
+set -g set-clipboard on
+
+# renumber windows when a window is closed
+set -g renumber-windows on
 
 # Sane mouse scrolling
 # https://superuser.com/questions/209437/how-do-i-scroll-in-tmux
@@ -64,6 +68,16 @@ setw -g aggressive-resize on
 
 # URL Launcher
 bind-key C-u run-shell -b "tmux capture-pane -J -p | grep -oE '(https?):\/\/.*[^>]' | fzf-tmux -d20 --multi --bind alt-a:select-all,alt-d:deselect-all | xargs open"
+
+{{ if eq .chezmoi.os "linux" -}}
+# Linux tab bindings
+bind -n M-] select-window -n
+bind -n M-[ select-window -p
+bind -n M-t new-window
+{{- end }}
+
+# SessionX
+set -g @sessionx-bind 'o'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
