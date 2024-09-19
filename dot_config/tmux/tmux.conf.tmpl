@@ -70,13 +70,6 @@ setw -g aggressive-resize on
 # URL Launcher
 bind-key C-u run-shell -b "tmux capture-pane -J -p | grep -oE '(https?):\/\/.*[^>]' | fzf-tmux -d20 --multi --bind alt-a:select-all,alt-d:deselect-all | xargs open"
 
-{{ if eq .chezmoi.os "linux" -}}
-# Linux tab bindings
-bind -n M-] select-window -n
-bind -n M-[ select-window -p
-bind -n M-t new-window
-{{- end }}
-
 # SessionX
 set -g @sessionx-bind 'o'
 
