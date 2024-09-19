@@ -18,7 +18,6 @@ return {
 	native_macos_fullscreen_mode = true,
 	window_background_opacity = 1.0,
 	-- window_background_opacity = 0.92,
-	window_decorations = "RESIZE",
 	keys = {
 		{
 			key = "Enter",
