@@ -4,57 +4,58 @@
 
 sudo apt update
 sudo apt install -y \
-	bat \
-	bpython \
-	btop \
-	build-essential \
-	direnv \
-	duf \
-	curl \
-	eza \
-	fd-find \
-	fzf \
-	git \
-	gnome-shell-extensions \
-	gnome-tweaks \
+  bat \
+  bpython \
+  btop \
+  build-essential \
+  direnv \
+  duf \
+  curl \
+  eza \
+  fd-find \
+  fzf \
+  git \
+  gnome-shell-extensions \
+  gnome-tweaks \
   gnupg2 \
-	jq \
-	libbz2-dev \
-	libncursesw5-dev \
-	libffi-dev \
-	liblzma-dev \
-	libreadline-dev \
-	libsqlite3-dev \
-	libssl-dev \
-	libxml2-dev \
-	libxmlsec1-dev \
-	mc \
-	ncdu \
-	neovim \
-	pipx \
-	python3-poetry \
-	ripgrep \
-	rmlint \
-	sd \
-	tk-dev \
-	tmux \
-	yt-dlp \
-	virt-manager \
-	xz-utils \
-	zlib1g-dev \
-	zoxide \
-	zsh
+  jq \
+  libbz2-dev \
+  libncursesw5-dev \
+  libffi-dev \
+  liblzma-dev \
+  libreadline-dev \
+  libsqlite3-dev \
+  libssl-dev \
+  libxml2-dev \
+  libxmlsec1-dev \
+  mc \
+  ncdu \
+  neovim \
+  pipx \
+  python3-poetry \
+  ripgrep \
+  rmlint \
+  sd \
+  tk-dev \
+  tmux \
+  yt-dlp \
+  virt-manager \
+  xz-utils \
+  zlib1g-dev \
+  zoxide \
+  zsh
 
 snap refresh
 
 snap install \
-	bandwhich \
-	grex \
-	procs \
-	ruff \
-	speedtest-cli \
-	spotify
+  bandwhich \
+  grex \
+  procs \
+  ruff \
+  speedtest-cli \
+  spotify
 snap install --classic go
+snap install --classic chezmoi
 
 sudo dpkg -i https://downloads.1password.com/linux/debian/amd64/stable/1password-latest.deb
 {{ end -}}
