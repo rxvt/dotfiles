@@ -6,6 +6,7 @@ set -g @plugin "arcticicestudio/nord-tmux"
 set -g @plugin 'schasse/tmux-jump'
 set -g @plugin 'omerxx/tmux-sessionx'
 set -g @plugin 'omerxx/tmux-floax'
+set -g @plugin 'christoomey/vim-tmux-navigator'
 
 # Enable 24bit colour
 # https://github.com/tmux/tmux/wiki/FAQ#how-do-i-use-rgb-colour
@@ -30,10 +31,10 @@ unbind %
 
 # vim-like pane switching
 #https://unix.stackexchange.com/questions/66745/tmux-remapping-keys-to-pane-on-the-left-right-top-down
-bind -n -r C-k select-pane -U
-bind -n -r C-j select-pane -D
-bind -n -r C-h select-pane -L
-bind -n -r C-l select-pane -R
+#bind -n -r C-k select-pane -U
+#bind -n -r C-j select-pane -D
+#bind -n -r C-h select-pane -L
+#bind -n -r C-l select-pane -R
 
 # Easy config reloads
 # https://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/
