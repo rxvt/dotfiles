@@ -179,7 +179,11 @@ keybinds {
         bind "Ctrl t" { SwitchToMode "Tab"; }
     }
     shared_except "move" "locked" {
-        bind "Ctrl h" { SwitchToMode "Move"; }
+        // Unbind removes the 'move' menu item from the status area since
+        // it doesn't really do anything. Also stops CTRL-H from
+        // interferring with VIM.
+        unbind "Ctrl h"
+        //bind "Ctrl h" { SwitchToMode "Move"; }
     }
     shared_except "tmux" "locked" {
         bind "Ctrl b" { SwitchToMode "Tmux"; }
