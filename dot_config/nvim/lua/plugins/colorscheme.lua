@@ -1,13 +1,13 @@
 return {
-	-- add nord
-	{ "shaunsingh/nord.nvim" },
-	{ "rose-pine/neovim", name = "rose-pine" },
+  -- add nord
+  { "shaunsingh/nord.nvim" },
 
-	-- Configure LazyVim to load nord
-	{
-		"LazyVim/LazyVim",
-		opts = {
-			colorscheme = "nord",
-		},
-	},
+  -- Configure LazyVim to load nord
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      -- colorscheme = "nord",
+      colorscheme = "catppuccin-frappe",
+    },
+  },
 }
