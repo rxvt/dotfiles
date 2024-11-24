@@ -3,3 +3,4 @@
 -- Add any additional options here
 vim.g.nord_italic = false
 vim.g.lazyvim_python_lsp = "basedpyright"
+vim.o.scrolloff = 5
