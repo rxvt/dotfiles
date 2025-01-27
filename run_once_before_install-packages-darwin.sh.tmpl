@@ -48,7 +48,6 @@ brew "yt-dlp"
 brew "zellij"
 brew "zoxide"
 brew "zsh"
-cask "anki"
 cask "homebrew/cask/alfred"
 cask "homebrew/cask/audacity"
 cask "homebrew/cask/betterdisplay"
@@ -56,21 +55,25 @@ cask "homebrew/cask/dash"
 cask "homebrew/cask/handbrake"
 cask "homebrew/cask/httpie"
 cask "homebrew/cask/iina"
-cask "homebrew/cask/kindle"
 cask "homebrew/cask/krita"
-cask "homebrew/cask/notion"
-cask "homebrew/cask/mp3tag"
 cask "homebrew/cask/podman-desktop"
-cask "homebrew/cask/plex-media-server"
 cask "homebrew/cask/pinta"
-cask "homebrew/cask/qbittorrent"
 cask "homebrew/cask/rectangle-pro"
-cask "homebrew/cask/scummvm"
 cask "homebrew/cask/spotify"
 cask "homebrew/cask/vlc"
 cask "homebrew/cask/wireshark"
-EOF
 
+{{- if not .work }}
+cask "anki"
+cask "homebrew/cask/notion"
+cask "homebrew/cask/mp3tag"
+cask "homebrew/cask/plex-media-server"
+cask "homebrew/cask/qbittorrent"
+cask "homebrew/cask/kindle"
+cask "homebrew/cask/scummvm"
+
+{{ end }}
+EOF
 # A lot of these taken from https://macos-defaults.com/
 
 # Set function keys to work as standard function keys
