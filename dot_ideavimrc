@@ -85,49 +85,50 @@ let g:WhichKeyDesc_errors_next = "<leader>en Go to next error in solution"
 let g:WhichKeyDesc_errors_prev = "<leader>ep Go to previous error in solution"
 
 set easymotion
-map s <Plug>(easymotion-s)
+nmap s <Plug>(easymotion-s)
 set notimeout
 
 " Comment lines
-map <leader>cc <action>(CommentByLineComment)
+nmap <leader>cc <action>(CommentByLineComment)
 
 " Errors
-map <leader>en <Action>(ReSharperGotoNextErrorInSolution)
-map <leader>ep <Action>(ReSharperGotoPrevErrorInSolution)
+nmap <leader>en <Action>(ReSharperGotoNextErrorInSolution)
+nmap <leader>ep <Action>(ReSharperGotoPrevErrorInSolution)
 
 " Folding
-map <leader>zc :action CollapseAllRegions<CR>
-map <leader>zo :action ExpandAllRegions<CR>
+nmap <leader>zc :action CollapseAllRegions<CR>
+nmap <leader>zo :action ExpandAllRegions<CR>
+" nmap <leader>za <Action>(ToggleFolding)
 
-" Go to code
+" Go to ...
 nmap <leader>gd <Action>(GotoDeclaration)
 nmap <leader>gy <Action>(GotoTypeDeclaration)
 nmap <leader>gi <Action>(GotoImplementation)
 nmap <leader>gu <Action>(ShowUsages)
+nmap <leader>gr <Action>(ShowUsages)
 nmap <leader>gt <Action>(GotoTest)
-nmap <leader>gf <Action>(Back)
-nmap <leader>gb <Action>(Forward)
+
+" Code actions
+nmap <leader>cr <Action>(RenameElement)
+vmap <leader>ce <Action>(ExtractMethod)
 
 " Refactoring
-map <leader>rn <Action>(RenameElement)
-map <leader>rm <Action>(ExtractMethod)
-map <leader>rv <Action>(IntroduceVariable)
-map <leader>rf <Action>(IntroduceField)
-map <leader>rs <Action>(ChangeSignature)
-map <leader>rr <Action>(Refactorings.QuickListPopupAction)
+nmap <leader>rn <Action>(RenameElement)
+vmap <leader>rm <Action>(ExtractMethod)
+nmap <leader>rr <Action>(Refactorings.QuickListPopupAction)
 
 " File navigation
-map <leader>ff <action>(GotoFile)
-map <leader>fr <action>(RecentFiles)
-map <leader>fc <action>(FindInPath)
+nmap <leader>ff <action>(GotoFile)
+nmap <leader>fr <action>(RecentFiles)
+nmap <leader>fc <action>(FindInPath)
 " map <leader><leader> <Action>(RecentFiles)
-map <leader>fl <action>(RecentLocations)
-map <leader>fs <action>(NewScratchFile)
+nmap <leader>fl <action>(RecentLocations)
+nmap <leader>fs <action>(NewScratchFile)
 
 " Git windows
-map <leader>gc <Action>(CheckinProject)
-map <leader>gs <Action>(ActivateVersionControlToolWindow)
-map <leader>gb <Action>(Git.Branches)
+nmap <leader>gc <Action>(CheckinProject)
+nmap <leader>gs <Action>(ActivateVersionControlToolWindow)
+nmap <leader>gb <Action>(Git.Branches)
 
 " Map jj to escape
 inoremap jj <Esc>
