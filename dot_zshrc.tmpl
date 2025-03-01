@@ -147,8 +147,8 @@ bindkey -M menuselect '^M' .accept-line
 setopt BASH_AUTO_LIST
 
 # Enable option stacking for Docker
-# zstyle ':completion:*:*:docker:*' optional-stacking yes
-# zstyle ':completion:*:*:docker-:*' optional-stacking yes
+zstyle ':completion:*:*:docker:*' optional-stacking yes
+zstyle ':completion:*:*:docker-:*' optional-stacking yes
 
 # Nord dircolors theme
 if [[ -f "${HOME}/.dir_colors" ]]; then
