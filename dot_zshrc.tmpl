@@ -161,7 +161,11 @@ eval "$(zoxide init --cmd cd zsh)"
 
 if [ ! -f ${HOME}/.zsh_work ]; then
 # 1Password SSH integration
+{{ if eq .chezmoi.os "darwin"}}
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+{{ else -}}
+export SSH_AUTH_SOCK=~/.1password/agent.sock
+{{ end -}}
 fi
 
 #  zsh-vi-mode configuration
