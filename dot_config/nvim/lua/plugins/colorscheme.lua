@@ -8,7 +8,8 @@ return {
 		opts = {
 			-- colorscheme = "nord",
 			-- colorscheme = "catppuccin-frappe",
-			colorscheme = "catppuccin-mocha",
+			-- colorscheme = "catppuccin-mocha",
+			colorscheme = "catppuccin-macchiato",
 		},
 	},
 }
