@@ -1,11 +1,14 @@
 # theme = catppuccin-mocha
 # theme = catppuccin-frappe
- theme = catppuccin-macchiato
+theme = catppuccin-macchiato
 font-family = Hack Nerd Font Mono
 {{ if eq .chezmoi.os "linux" }}
-font-size = 13
+font-size = 12
 {{ else }}
 font-size = 16
 {{ end }}
 # font-thicken = true
 macos-option-as-alt = true
+{{ if eq .chezmoi.os "linux" }}
+window-decoration = none
+{{ end }}
