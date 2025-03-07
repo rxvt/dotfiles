@@ -35,9 +35,10 @@ sudo pacman -S \
 curl -sS https://downloads.1password.com/linux/keys/1password.asc | gpg --import
 
 paru -S \
-  aur/ulauncher \
+  aur/1password \
   aur/extension-manager \
-  aur/1password
+  aur/gnome-extensions-cli \
+  aur/ulauncher
 
 #
 # Gnome configuration
@@ -78,9 +79,11 @@ gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-6 "['<Super>6
 # Center new windows in the middle of the screen
 gsettings set org.gnome.mutter center-new-windows true
 
-# Gnome Extensions
-# TODO: Install gnome-extensions-cli
-# gext install tactile@lundal.io
+# Full-screen with title/navigation bar
+gsettings set org.gnome.desktop.wm.keybindings toggle-fullscreen "['<Shift>F11']"
+
+# Install Gnome extensions
+gext install tactile@lundal.io
 
 # Themes
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
