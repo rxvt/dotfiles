@@ -53,9 +53,9 @@ map cmd+7 send_text normal,application \x007
 map cmd+8 send_text normal,application \x008
 map cmd+9 send_text normal,application \x009
 
-{{ if eq .chezmoi.os "linux" }}
+{{ if eq .chezmoi.os "linux" -}}
 hide_window_decorations yes
-{{ end }}
+{{- end }}
 
 # On macOS use option as alt
 macos_option_as_alt yes
