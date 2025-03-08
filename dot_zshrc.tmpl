@@ -64,21 +64,12 @@ COMPLETION_WAITING_DOTS="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# NVM
-{{- if eq .chezmoi.os "darwin" -}}
-NVM_HOMEBREW=$(brew --prefix nvm)
-{{ end -}}
-
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(aws brew direnv fzf git nvm)
-
-if [ -f $HOME/.zsh_work ]; then
-  source $HOME/.zsh_work
-fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,23 +100,32 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Aliases
-alias cat="bat"
-alias ls="eza --icons"
-alias ll="eza --icons -l"
-alias grep="rg"
-alias vim="nvim"
-alias ca="chezmoi apply"
 alias caa="chezmoi add"
+alias ca="chezmoi apply"
+alias cat="bat"
+alias ccd="chezmoi cd"
 alias ce="chezmoi edit"
 alias cv="chezmoi verify"
-alias ccd="chezmoi cd"
-alias mc="VIEWER=mc_pager mc"
 alias fzfp="fzf --preview 'bat --color=always {}'"
-alias awslocal="awslocal --profile localstack"
-alias z="zellij"
+alias grep="rg"
 alias lg="lazygit"
+alias ll="eza --icons -l"
+alias ls="eza --icons"
+alias mc="VIEWER=mc_pager mc"
+alias vim="nvim"
+alias v="nvim"
+alias z="zellij"
 
 ## Customisations
+#
+if [ -f $HOME/.zsh_work ]; then
+  source $HOME/.zsh_work
+fi
+
+# NVM
+{{- if eq .chezmoi.os "darwin" -}}
+NVM_HOMEBREW=$(brew --prefix nvm)
+{{ end -}}
 
 # Created by `pipx` on 2022-10-28 04:02:07
 export PATH="$PATH:$HOME/.local/bin"
@@ -167,10 +167,6 @@ export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agen
 export SSH_AUTH_SOCK=~/.1password/agent.sock
 {{ end -}}
 fi
-
-#  zsh-vi-mode configuration
-ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BEAM
-ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLOCK
 
 # Disable homebrew upgrades on install
 export HOMEBREW_NO_AUTO_UPDATE=1
