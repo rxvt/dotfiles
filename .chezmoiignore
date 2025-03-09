@@ -3,3 +3,9 @@ README.md
 {{ if eq .work false -}}
 .zsh_work
 {{- end }}
+{{ if ne .chezmoi.os "darwin" }}
+Library/Application Support/Hatch/config.toml
+{{ end }}
+{{ if ne .chezmoi.os "linux" }}
+.config/hatch/config.toml
+{{ end }}
