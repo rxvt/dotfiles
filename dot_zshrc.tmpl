@@ -69,7 +69,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aws brew direnv fzf git nvm)
+plugins=(aws brew direnv fzf git nvm asdf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -78,6 +78,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
+# 
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
@@ -176,3 +177,6 @@ export UV_PYTHON_PREFERENCE=only-managed
 
 # Python
 alias venv="source ./.venv/bin/activate"
+
+# asdf
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
