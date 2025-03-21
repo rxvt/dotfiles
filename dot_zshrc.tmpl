@@ -124,7 +124,7 @@ if [ -f $HOME/.zsh_work ]; then
 fi
 
 # NVM
-{{- if eq .chezmoi.os "darwin" -}}
+{{- if eq .osid "darwin" -}}
 NVM_HOMEBREW=$(brew --prefix nvm)
 {{ end -}}
 
@@ -150,7 +150,7 @@ zstyle ':completion:*:*:docker-:*' optional-stacking yes
 
 # Nord dircolors theme
 if [[ -f "${HOME}/.dir_colors" ]]; then
-  {{ if eq .chezmoi.os "darwin" -}}
+  {{ if eq .osid "darwin" -}}
       eval $(/opt/homebrew/opt/coreutils/libexec/gnubin/dircolors ~/.dir_colors)
   {{- else -}}
       eval $(/usr/bin/dircolors ~/.dir_colors)
@@ -162,7 +162,7 @@ eval "$(zoxide init --cmd cd zsh)"
 
 if [ ! -f ${HOME}/.zsh_work ]; then
 # 1Password SSH integration
-{{ if eq .chezmoi.os "darwin"}}
+{{ if eq .osid "darwin"}}
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 {{ else -}}
 export SSH_AUTH_SOCK=~/.1password/agent.sock

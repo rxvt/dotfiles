@@ -2,7 +2,7 @@ Host *
     IgnoreUnknown UseKeychain
     UseKeychain yes
     ForwardAgent yes
-  {{- if eq .chezmoi.os "darwin" }}
+  {{- if eq .osid "darwin" }}
     IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
   {{ else }}
     IdentityAgent "~/.1password/agent.sock"
