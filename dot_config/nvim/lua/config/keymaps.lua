@@ -5,3 +5,5 @@
 vim.keymap.set("i", "jj", "<ESC>", { silent = true })
 vim.keymap.set("v", "<", "<gv", { silent = true })
 vim.keymap.set("v", ">", ">gv", { silent = true })
+vim.keymap.set("n", "<C-]>", "<C-i>", { desc = "Jump forward in jumplist" })
+vim.keymap.set("n", "<C-[>", "<C-o>", { desc = "Jump backward in jumplist" })
