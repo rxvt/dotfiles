@@ -3303,11 +3303,17 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>7994190F-DC70-44D6-AA75-EB6A675255AC</string>
+	<key>DimBackgroundWindows</key>
+	<false/>
 	<key>DimOnlyText</key>
 	<true/>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
+	<key>HideActivityIndicator</key>
+	<false/>
 	<key>HideScrollbar</key>
+	<true/>
+	<key>HideTabNumber</key>
 	<true/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
@@ -6494,6 +6500,8 @@
 			<string>/Users/shane</string>
 		</dict>
 	</array>
+	<key>PMPrintingPanelSize</key>
+	<string>{777, 828}</string>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -6529,6 +6537,8 @@
 	</dict>
 	<key>Print In Black And White</key>
 	<true/>
+	<key>SeparateStatusBarsPerPane</key>
+	<false/>
 	<key>ShowFullScreenTabBar</key>
 	<true/>
 	<key>ShowPaneTitles</key>
@@ -6541,6 +6551,12 @@
 	<false/>
 	<key>TabStyleWithAutomaticOption</key>
 	<integer>5</integer>
+	<key>TabsHaveCloseButton</key>
+	<false/>
+	<key>TerminalVMargin</key>
+	<integer>5</integer>
+	<key>UseLionStyleFullscreen</key>
+	<true/>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>WindowNumber</key>
