@@ -89,6 +89,14 @@ source <(fzf --zsh)
 # AWS completions
 complete -C '/opt/homebrew/bin/aws_completer' aws
 
+# zsh completions
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
 # zsh zsh-syntax-highlighting
 # Must appear last in .zshrc
 # https://github.com/zsh-users/zsh-syntax-highlighting/tree/master?tab=readme-ov-file#why-must-zsh-syntax-highlightingzsh-be-sourced-at-the-end-of-the-zshrc-file
