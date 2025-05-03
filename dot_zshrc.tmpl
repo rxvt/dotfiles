@@ -1,16 +1,50 @@
 # Reevaluate the prompt string each time it's displaying a prompt
 # from https://github.com/omerxx/dotfiles/blob/master/zshrc/.zshrc
 setopt prompt_subst
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit
 compinit
 
+# case-insensitive completions
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+# zsh zsh-autosuggestions
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# AWS completions
+complete -C '/opt/homebrew/bin/aws_completer' aws
+
+# Enable option stacking for Docker
+zstyle ':completion:*:*:docker:*' optional-stacking yes
+zstyle ':completion:*:*:docker-:*' optional-stacking yes
+
+# extra zsh completions
+# slows down creation of new shells
+#if type brew &>/dev/null; then
+#  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+#
+#  autoload -Uz compinit
+#  compinit
+#fi
+
+# History
+HISTSIZE=5000
+HISTFILE="${HOME}/.zsh_history"
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+export PATH="$PATH:$HOME/.local/bin"
+
 # Init Starship
 export STARSHIP_CONFIG="${HOME}/.config/starship/starship.toml"
 eval "$(starship init zsh)"
-
-export PATH="$PATH:$HOME/.local/bin"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -19,18 +53,39 @@ else
   export EDITOR='nvim'
 fi
 
-# zsh zsh-autosuggestions
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# 1Password SSH integration
+if [ ! -f ${HOME}/.zsh_work ]; then
+{{ if eq .osid "darwin" -}}
+export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+{{ else -}}
+export SSH_AUTH_SOCK=~/.1password/agent.sock
+{{ end -}}
+fi
 
 # Set Bat theme
 export BAT_THEME="Catppuccin Macchiato"
 
-# Enable option stacking for Docker
-zstyle ':completion:*:*:docker:*' optional-stacking yes
-zstyle ':completion:*:*:docker-:*' optional-stacking yes
-
 # Zoxide
 eval "$(zoxide init --cmd cd zsh)"
+
+# Disable homebrew upgrades on install
+export HOMEBREW_NO_AUTO_UPDATE=1
+
+# asdf
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
+# bun
+export BUN_INSTALL="$HOME/Library/Application Support/reflex/bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# UV
+export UV_PYTHON_PREFERENCE=only-managed
+
+# direnv
+eval "$(direnv hook zsh)"
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 
 # Aliases
 alias cad="chezmoi add"
@@ -56,45 +111,6 @@ alias z="zellij"
 # Load work config if required
 if [ -f $HOME/.zsh_work ]; then
   source $HOME/.zsh_work
-fi
-
-# 1Password SSH integration
-if [ ! -f ${HOME}/.zsh_work ]; then
-{{ if eq .osid "darwin" -}}
-export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
-{{ else -}}
-export SSH_AUTH_SOCK=~/.1password/agent.sock
-{{ end -}}
-fi
-
-# Disable homebrew upgrades on install
-export HOMEBREW_NO_AUTO_UPDATE=1
-
-# asdf
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-
-# bun
-export BUN_INSTALL="$HOME/Library/Application Support/reflex/bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# UV
-export UV_PYTHON_PREFERENCE=only-managed
-
-# direnv
-eval "$(direnv hook zsh)"
-
-# Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
-
-# AWS completions
-complete -C '/opt/homebrew/bin/aws_completer' aws
-
-# zsh completions
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-
-  autoload -Uz compinit
-  compinit
 fi
 
 # zsh zsh-syntax-highlighting
