@@ -66,7 +66,7 @@ alias mc="VIEWER=mc_pager mc"
 alias venv="source ./.venv/bin/activate"
 alias vim="nvim"
 alias v="nvim"
-#alias z="zellij"
+alias zj="zellij"
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
