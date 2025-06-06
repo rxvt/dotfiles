@@ -3,6 +3,9 @@ set -g fish_greeting
 
 set -gx EDITOR nvim
 
+# Local bin
+set -gx --prepend PATH "$HOME/.local/bin"
+
 # Homebrew
 /opt/homebrew/bin/brew shellenv | source
 set -gx HOMEBREW_NO_AUTO_UPDATE 1
