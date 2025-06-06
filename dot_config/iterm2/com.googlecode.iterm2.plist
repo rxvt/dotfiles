@@ -4212,6 +4212,8 @@
 			<string>No</string>
 			<key>Description</key>
 			<string>Default</string>
+			<key>Disable Printing</key>
+			<false/>
 			<key>Disable Window Resizing</key>
 			<true/>
 			<key>Draw Powerline Glyphs</key>
