@@ -40,6 +40,9 @@ fzf --fish | source
 # 1Password
 set -gx SSH_AUTH_SOCK "$HOME/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 
+# Anthropic API
+set -gx ANTHROPIC_API_KEY "op://Private/Claude Console/password"
+
 # Starship
 set -gx STARSHIP_CONFIG "$HOME/.config/starship/starship.toml"
 starship init fish | source
