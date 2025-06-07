@@ -25,6 +25,10 @@ return {
       preselect = true, -- Do not preselect
       auto_insert = false, -- Do not auto insert
     }
+
+    -- Ghost text - currently makes the menu look different
+    -- opts.cmdline = { completion = { ghost_text = { enabled = true } } }
+
     return opts
   end,
 }
