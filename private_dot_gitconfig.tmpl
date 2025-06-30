@@ -4,7 +4,7 @@
 	email = 17208811+rxvt@users.noreply.github.com
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAMShiJ2tu9PanMRrPQbE11Wswcr+z4Hu8pjRk46kyy8
 {{ else }}
-  email = {{- .chezmoi.username -}}@atlassian.com
+  email = {{ .chezmoi.username }}@atlassian.com
 {{ end -}}
 [core]
   autocrlf = input
@@ -38,26 +38,26 @@
   insteadOf = https://bitbucket.org
 
 [trace2]
-    eventTarget = af_unix:{{- .chezmoi.homeDir -}}/.gittrace/trace.sock
-    eventBrief = true
-    eventNesting = 1
-    configparams = custom.metacommand
+  eventTarget = af_unix:{{ .chezmoi.homeDir }}/.gittrace/trace.sock
+  eventBrief = true
+  eventNesting = 1
+  configparams = custom.metacommand
 {{ end -}}
 
 [core]
-    pager = delta
+  pager = delta
 
 [interactive]
-    diffFilter = delta --color-only
+  diffFilter = delta --color-only
 
 [delta]
-    features = arctic-fox
-    navigate = true  # use n and N to move between diff sections
-    #dark = true      # or light = true, or omit for auto-detection
-    #side-by-side = true
+  features = arctic-fox
+  navigate = true  # use n and N to move between diff sections
+  #dark = true      # or light = true, or omit for auto-detection
+  #side-by-side = true
 
 [merge]
-    conflictstyle = zdiff3
+  conflictstyle = zdiff3
 
 [include]
-    path = ~/.config/delta/themes.gitconfig
+  path = ~/.config/delta/themes.gitconfig
