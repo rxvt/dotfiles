@@ -25,6 +25,11 @@ return {
       preselect = true, -- Do not preselect
       auto_insert = false, -- Do not auto insert
     }
+    opts.completion.trigger = {
+      show_on_insert_on_trigger_character = false, -- Disable auto-popup
+      show_on_keyword = false,
+      show_on_trigger_character = false,
+    }
 
     -- Ghost text - currently makes the menu look different
     -- opts.cmdline = { completion = { ghost_text = { enabled = true } } }
