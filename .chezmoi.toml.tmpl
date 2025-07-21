@@ -6,6 +6,4 @@
 [data]
 {{- $work := promptBoolOnce . "work" "Is this a work machine" }}
 work = {{ $work }}
-{{- $server := promptBoolOnce . "serer" "Is this a server" }}
-server = {{ $server }}
 osid = {{ $osid | quote }}
