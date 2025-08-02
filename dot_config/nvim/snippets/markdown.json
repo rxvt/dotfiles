@@ -4,12 +4,27 @@
     "body": [
       "Title: ${1:Post Title}",
       "Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE",
-      "Category: ${3:General, Projects}",
-      "Tags: ${4:aws, python}",
-      "Summary: ${6:Brief description}",
+      "Category: ${2:General, Projects}",
+      "Tags: ${3:aws, python, vim}",
+      "Status: draft",
+      "Summary: ${4:Brief description}",
       "",
       "$0"
     ],
     "description": "Pelican blog post"
+  },
+  "pelican-til": {
+    "prefix": "til",
+    "body": [
+      "Title: ${1:Post Title}",
+      "Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE",
+      "Category: TIL",
+      "Tags: ${2:aws, python, vim}",
+      "Status: draft",
+      "Summary: ${3:Brief description}",
+      "",
+      "$0"
+    ],
+    "description": "Pelican TIL post"
   }
 }
