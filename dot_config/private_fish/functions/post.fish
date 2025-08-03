@@ -52,7 +52,7 @@ function post --description "Create a new post entry and open with LazyVim post 
     # Open Neovim and automatically trigger snippet expansion
     # This attempts to auto-expand the snippet on opening
     # nvim +"lua vim.defer_fn(function() vim.api.nvim_feedkeys('A', 'n', true) end, 50)" $filepath
-    nvim $filepath
+    nvim -c startinsert $filepath
 
     # Return to original directory
     cd $original_dir
