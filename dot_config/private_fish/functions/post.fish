@@ -3,8 +3,8 @@ function post --description "Create a new post entry and open with LazyVim post 
     if test (count $argv) -eq 0
         echo "Usage: post <topic-name>"
         echo "Examples:"
-        echo "  post vim-new-command"
-        echo "  post javascript-array-methods"
+        echo "  post 'vim new command'"
+        echo "  post 'javascript array methods'"
         return 1
     end
 
