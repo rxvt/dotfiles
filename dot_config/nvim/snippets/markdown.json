@@ -9,7 +9,7 @@
       "Status: draft",
       "Summary: ${4:Brief description}",
       "",
-      "$0"
+      "${5:Content}"
     ],
     "description": "Pelican blog post"
   },
@@ -23,7 +23,7 @@
       "Status: draft",
       "Summary: ${3:Brief description}",
       "",
-      "$0"
+      "${4:Content}"
     ],
     "description": "Pelican TIL post"
   }
