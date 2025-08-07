@@ -50,9 +50,6 @@ starship init fish | source
 # Zoxide
 zoxide init fish | source
 
-# Bat
-set -gx BAT_THEME "Catppuccin Macchiato"
-
 # Aliases
 alias cd="z"
 alias cad="chezmoi add"
