@@ -26,5 +26,12 @@
       "${4:Content}"
     ],
     "description": "Pelican TIL post"
+  },
+  "pelican-screenshot": {
+    "prefix": "!screenshot",
+    "body": [
+      "![Screenshot]({static}/images/${1:Filename})"
+    ],
+    "description": "Screenshot"
   }
 }
