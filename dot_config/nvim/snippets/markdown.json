@@ -6,7 +6,7 @@
       "Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE",
       "Category: ${2:General, Projects}",
       "Tags: ${3:aws, python, vim}",
-      "Status: draft",
+      "Status: published",
       "Summary: ${4:Brief description}",
       "",
       "${5:Content}"
@@ -20,7 +20,7 @@
       "Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE",
       "Category: TIL",
       "Tags: ${2:aws, python, vim}",
-      "Status: draft",
+      "Status: published",
       "Summary: ${3:Brief description}",
       "",
       "${4:Content}"
