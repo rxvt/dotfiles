@@ -6,9 +6,11 @@ set -gx EDITOR nvim
 # Local bin
 set -gx --prepend PATH "$HOME/.local/bin"
 
+{{ if ne .chezmoi.os "linux" }}
 # Homebrew
 /opt/homebrew/bin/brew shellenv | source
 set -gx HOMEBREW_NO_AUTO_UPDATE 1
+{{ end }}
 
 # ASDF
 if test -z $ASDF_DATA_DIR
@@ -24,9 +26,11 @@ if not contains $_asdf_shims $PATH
 end
 set --erase _asdf_shims
 
+{{ if ne .chezmoi.os "linux" }}
 # Bun
 set -gx BUN_INSTALL "$HOME/Library/Application Support/reflex/bun"
 set -gx --prepend PATH "$BUN_INSTALL/bin"
+{{ end }}
 
 # UV
 set -gx UV_PYTHON_PREFERENCE only-managed
@@ -38,7 +42,9 @@ direnv hook fish | source
 fzf --fish | source
 
 # 1Password
+{{ if ne .chezmoi.os "linux" }}
 set -gx SSH_AUTH_SOCK "$HOME/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+{{ end }}
 
 # Anthropic API
 set -gx ANTHROPIC_API_KEY "op://Private/Claude Console/password"
