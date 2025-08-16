@@ -3327,6 +3327,8 @@
 	<false/>
 	<key>HideActivityIndicator</key>
 	<false/>
+	<key>HideMenuBarInFullscreen</key>
+	<false/>
 	<key>HideScrollbar</key>
 	<true/>
 	<key>HideTabNumber</key>
@@ -3335,6 +3337,12 @@
 	<true/>
 	<key>IRMemory</key>
 	<integer>4</integer>
+	<key>MaxVertically</key>
+	<false/>
+	<key>NeverWarnAboutShortLivedSessions_7994190F-DC70-44D6-AA75-EB6A675255AC</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_7994190F-DC70-44D6-AA75-EB6A675255AC_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -4386,6 +4394,8 @@
 			<true/>
 			<key>Normal Font</key>
 			<string>HackNFM-Regular 14</string>
+			<key>Open Password Manager Automatically</key>
+			<false/>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Place Prompt at First Column</key>
@@ -4534,7 +4544,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>Working Directory</key>
 			<string>/Users/shane</string>
 		</dict>
@@ -5382,13 +5392,17 @@
 	<integer>0</integer>
 	<key>TabsHaveCloseButton</key>
 	<false/>
+	<key>TerminalMargin</key>
+	<integer>5</integer>
 	<key>TerminalVMargin</key>
 	<integer>5</integer>
 	<key>UseLionStyleFullscreen</key>
-	<true/>
+	<false/>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>WindowNumber</key>
+	<false/>
+	<key>disableMetalWhenUnplugged</key>
 	<false/>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
