@@ -9,14 +9,11 @@ sudo pacman -S \
   extra/aws-cli \
   bandwhich \
   bat \
-  chromium \
   direnv \
   duf \
   eza \
   fd \
   fzf \
-  ghostty \
-  gnome-tweaks \
   go \
   jq \
   lazygit \
@@ -33,20 +30,8 @@ sudo pacman -S \
   extra/ttf-nerd-fonts-symbols-mono \
   extra/uv \
   yt-dlp \
-  wl-clipboard \
   zellij \
   zoxide \
   zsh
 
-curl -sS https://downloads.1password.com/linux/keys/1password.asc | gpg --import
-
-paru -S \
-  aur/1password \
-  aur/extension-manager \
-  aur/gnome-extensions-cli \
-  aur/ulauncher
-
-# Install Gnome extensions
-gext install tactile@lundal.io
-gext install instantworkspaceswitcher@amalantony.net
 {{ end -}}
