@@ -173,7 +173,8 @@ symbol = " "
 
 [python]
 symbol = " "
-format = 'via [$symbol]($style)'
+#format = 'via [$symbol]($style)($virtualenv)'
+format = '[$symbol]($style)(venv: $virtualenv)'
 
 [rlang]
 symbol = "󰟔 "
