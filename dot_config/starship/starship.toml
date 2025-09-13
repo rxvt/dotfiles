@@ -174,8 +174,7 @@ symbol = " "
 
 [python]
 symbol = " "
-#format = 'via [$symbol]($style)($virtualenv)'
-format = '[$symbol]($style)(venv: $virtualenv)'
+format = '[${symbol}(\(${virtualenv}\))]($style)'
 
 [rlang]
 symbol = "󰟔 "
