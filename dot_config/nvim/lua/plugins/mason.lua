@@ -1,6 +1,6 @@
 -- In your Mason plugin configuration
 return {
-  "williamboman/mason.nvim",
+  "mason-org/mason.nvim",
   opts = {
     ensure_installed = {
       -- LSP servers
