@@ -7,3 +7,4 @@ font-size = 14
 macos-option-as-alt = true
 shell-integration-features = no-cursor
 macos-non-native-fullscreen
+fullscreen = true
