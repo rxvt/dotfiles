@@ -1,8 +1,9 @@
 theme = catppuccin-macchiato.conf
 font-family = Hack Nerd Font Mono
 font-size = 14
-#font-thicken = true
+font-thicken = true
 macos-option-as-alt = true
 shell-integration-features = no-cursor
 macos-non-native-fullscreen = visible-menu
 fullscreen = true
+font-style-bold = false
