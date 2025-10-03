@@ -2,14 +2,8 @@
 # theme = catppuccin-frappe
 theme = catppuccin-macchiato
 font-family = Hack Nerd Font Mono
-{{ if eq .chezmoi.os "linux" }}
-font-size = 12
-{{ else }}
 font-size = 14
-{{ end }}
-# font-thicken = true
+#font-thicken = true
 macos-option-as-alt = true
 shell-integration-features = no-cursor
-{{ if eq .chezmoi.os "linux" }}
-window-decoration = none
-{{ end }}
+macos-non-native-fullscreen
