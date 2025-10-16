@@ -4,7 +4,6 @@ return {
   opts = {
     ensure_installed = {
       -- LSP servers
-      "basedpyright",
       "bash-language-server",
       "debugpy",
       "delve",
