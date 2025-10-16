@@ -8,4 +8,5 @@ Library
 {{ end }}
 {{ if ne .chezmoi.os "linux" }}
 .config/hatch/config.toml
+.config/fcitx5
 {{ end }}
