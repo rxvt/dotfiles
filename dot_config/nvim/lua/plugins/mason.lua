@@ -25,6 +25,7 @@ return {
       "sqlfluff",
       "stylua",
       "taplo",
+      "ty",
       "yaml-language-server",
       -- Add all your essential tools here
     },
