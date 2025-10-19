@@ -1,14 +1,11 @@
 return {
-  { "shaunsingh/nord.nvim" },
+  ui = {
+    border = "rounded",
+  },
   {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "catppuccin-macchiato",
-    },
-  },
-  {
-    ui = {
-      border = "rounded",
     },
   },
   {
