@@ -1,6 +1,15 @@
 return {
-  ui = {
-    border = "rounded",
+  { "shaunsingh/nord.nvim" },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "catppuccin-macchiato",
+    },
+  },
+  {
+    ui = {
+      border = "rounded",
+    },
   },
   {
     "hrsh7th/nvim-cmp",
