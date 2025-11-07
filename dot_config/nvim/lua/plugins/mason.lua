@@ -4,6 +4,7 @@ return {
   opts = {
     ensure_installed = {
       -- LSP servers
+      "basedpyright",
       "bash-language-server",
       "debugpy",
       "delve",
@@ -25,7 +26,6 @@ return {
       "sqlfluff",
       "stylua",
       "taplo",
-      "ty",
       "yaml-language-server",
       -- Add all your essential tools here
     },
