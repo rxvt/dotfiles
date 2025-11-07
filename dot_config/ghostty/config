@@ -1,4 +1,5 @@
-theme = catppuccin-macchiato.conf
+#theme = catppuccin-macchiato.conf
+theme = TokyoNight Storm
 font-family = Hack Nerd Font Mono
 font-size = 14
 font-thicken = true
