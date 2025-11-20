@@ -81,9 +81,10 @@ See `lua/plugins/example.lua` for comprehensive examples of all patterns.
 - `lsp.lua` - LSP server configurations and keymaps
 - `completion.lua` - Completion behavior (blink.cmp with manual trigger)
 - `mason.lua` - Tool installation via Mason (LSP servers, formatters, linters)
-- `editor.lua` - Editor behavior modifications (e.g., change without yanking)
-- `markdown.lua` - Markdown rendering and linting config
-- `web.lua`, `sql.lua`, `testing.lua` - Language/tool specific configs
+- `editor.lua` - Editor behavior modifications (change without yanking)
+- `markdown.lua` - Markdown rendering (render-markdown.nvim) and linting (markdownlint-cli2)
+- `testing.lua` - Neotest configuration (disables virtual text for test status)
+- `example.lua` - Reference examples of plugin configuration patterns
 
 ### Important Configuration Details
 
@@ -94,14 +95,41 @@ See `lua/plugins/example.lua` for comprehensive examples of all patterns.
 **Custom Keymaps** (keymaps.lua):
 - Always use descriptive `desc` field when defining keymaps
 - `jj` in insert mode = ESC
-- `c`/`C`/`cc` = Change without yanking (use black hole register)
-- `<C-[>` / `<C-]>` = Navigate jumplist
+- `<` / `>` in visual mode = Indent and reselect
+- `<C-[>` / `<C-]>` = Navigate jumplist backward/forward
 - `<leader>q` = Original q functionality (q remapped to no-op)
+- `c`/`C`/`cc` in normal mode = Change without yanking (use black hole register)
+- `c` in visual mode = Change selection without yanking
 
 **Completion** (completion.lua):
+- Uses blink.cmp as completion engine
 - Completion is manual-trigger only (all auto-trigger disabled)
-- Toggle with `<leader>uk`
+- Toggle completion on/off with `<leader>uk`
 - Preselect enabled but auto-insert disabled
+- Uses Snacks.nvim toggle for completion state management
+
+**LSP Configuration** (lsp.lua):
+- Inlay hints disabled by default
+- Diagnostics use rounded borders
+- Emmet language server configured for web filetypes (HTML, CSS, JSX, TSX, Vue, Svelte)
+- `<leader>cL` = Toggle basedpyright LSP on/off for Python files
+
+**Mason Tools** (mason.lua):
+- Mason UI uses rounded borders
+- Auto-installs essential tools:
+  - LSP servers: basedpyright, gopls, lua-language-server, bash-language-server, emmet-language-server, json-lsp, yaml-language-server, marksman, dockerfile-language-server, docker-compose-language-service
+  - Formatters: stylua, gofumpt, goimports, shfmt, ruff
+  - Linters: shellcheck, markdownlint-cli2
+  - Debuggers: debugpy, delve
+  - Tools: markdown-toc, taplo, emmet-ls
+
+**Markdown Configuration** (markdown.lua):
+- render-markdown.nvim disabled by default
+- Custom heading icons and checkbox rendering configured
+- markdownlint-cli2 uses custom config path: `/home/pcino/.markdownlint-cli2.yaml`
+
+**Testing Configuration** (testing.lua):
+- Neotest virtual text disabled for cleaner test status display
 
 ## LazyVim Extension Pattern
 

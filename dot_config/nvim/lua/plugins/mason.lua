@@ -1,8 +1,11 @@
--- In your Mason plugin configuration
 return {
   "mason-org/mason.nvim",
-  opts = {
-    ensure_installed = {
+  opts = function(_, opts)
+    opts.ui = opts.ui or {}
+    opts.ui.border = "rounded"
+
+    opts.ensure_installed = opts.ensure_installed or {}
+    vim.list_extend(opts.ensure_installed, {
       -- LSP servers
       "basedpyright",
       "bash-language-server",
@@ -23,11 +26,9 @@ return {
       "ruff",
       "shellcheck",
       "shfmt",
-      "sqlfluff",
       "stylua",
       "taplo",
       "yaml-language-server",
-      -- Add all your essential tools here
-    },
-  },
+    })
+  end,
 }
