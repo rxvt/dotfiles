@@ -8,4 +8,10 @@ return {
       vim.keymap.set("x", "c", '"_c', { noremap = true, desc = "Change selection without yanking" })
     end,
   },
+  -- {
+  --   "nvim-treesitter/nvim-treesitter-context",
+  --   opts = {
+  --     mode = "topline",
+  --   },
+  -- },
 }
