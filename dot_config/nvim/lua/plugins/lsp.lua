@@ -8,7 +8,6 @@ return {
       -- Diagnostics styling
       opts.diagnostics = opts.diagnostics or {}
       opts.diagnostics.float = opts.diagnostics.float or {}
-      opts.diagnostics.float.border = "rounded"
 
       -- Server configurations
       opts.servers = opts.servers or {}

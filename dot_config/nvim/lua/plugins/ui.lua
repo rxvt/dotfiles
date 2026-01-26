@@ -1,7 +1,4 @@
 return {
-  ui = {
-    border = "rounded",
-  },
   {
     "LazyVim/LazyVim",
     opts = {
