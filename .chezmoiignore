@@ -2,11 +2,15 @@ LICENSE
 README.md
 {{ if eq .work false -}}
 .zsh_work
+.zshrc
+.zprofile
 {{- end }}
 {{ if ne .chezmoi.os "darwin" }}
 Library
+.dir_colors
+.config/ghostty/themes
+.hushlogin
 {{ end }}
 {{ if ne .chezmoi.os "linux" }}
 .config/hatch/config.toml
-.config/fcitx5
 {{ end }}
