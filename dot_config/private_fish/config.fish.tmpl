@@ -35,6 +35,9 @@ set -gx --prepend PATH "$BUN_INSTALL/bin"
 # UV
 set -gx UV_PYTHON_PREFERENCE only-managed
 
+# libvirt
+set -gx LIBVIRT_DEFAULT_URI "qemu:///system"
+
 # direnv
 direnv hook fish | source
 
