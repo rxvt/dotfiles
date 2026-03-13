@@ -1,16 +1,17 @@
 {{- if eq .osid "darwin" -}}
-#theme = catppuccin-macchiato.conf
-theme = TokyoNight Storm
-font-family = Hack Nerd Font Mono
+theme = catppuccin-macchiato.conf
+font-family = "JetBrainsMono Nerd Font"
+font-style = Regular
 font-size = 14
-font-thicken = true
-macos-option-as-alt = true
-shell-integration-features = no-cursor
-#macos-non-native-fullscreen =  true
-macos-non-native-fullscreen = visible-menu
-#macos-non-native-fullscreen = padded-notch
-fullscreen = true
+font-thicken = false
 font-style-bold = false
+shell-integration-features = no-cursor,ssh-env
+fullscreen = true
+macos-option-as-alt = true
+macos-non-native-fullscreen = true
+macos-non-native-fullscreen = visible-menu
+cursor-style = "block"
+cursor-style-blink = false
 {{ end -}}
 {{- if eq .osid "linux-arch" -}}
 # Dynamic theme colors
