@@ -1,6 +1,16 @@
 return {
   {
     "MeanderingProgrammer/render-markdown.nvim",
+    init = function()
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "markdown",
+        callback = function()
+          vim.opt_local.wrap = true
+          vim.opt_local.linebreak = true
+
+        end,
+      })
+    end,
     opts = {
       enabled = false,
       render_modes = { "n", "c", "t" },
