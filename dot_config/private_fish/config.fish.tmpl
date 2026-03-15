@@ -6,48 +6,29 @@ set -gx EDITOR nvim
 # Local bin
 set -gx --prepend PATH "$HOME/.local/bin"
 
-{{ if ne .chezmoi.os "linux" }}
+{{ if eq .chezmoi.os "darwin" }}
+
 # Homebrew
 /opt/homebrew/bin/brew shellenv | source
 set -gx HOMEBREW_NO_AUTO_UPDATE 1
+
 {{ end }}
 
-# ASDF
-if test -z $ASDF_DATA_DIR
-    set _asdf_shims "$HOME/.asdf/shims"
-else
-    set _asdf_shims "$ASDF_DATA_DIR/shims"
-end
+{{ if eq .chezmoi.os "linux" }}
 
-# Do not use fish_add_path (added in Fish 3.2) because it
-# potentially changes the order of items in PATH
-if not contains $_asdf_shims $PATH
-    set -gx --prepend PATH $_asdf_shims
-end
-set --erase _asdf_shims
+# libvirt
+set -gx LIBVIRT_DEFAULT_URI "qemu:///system"
 
-{{ if ne .chezmoi.os "linux" }}
-# Bun
-set -gx BUN_INSTALL "$HOME/Library/Application Support/reflex/bun"
-set -gx --prepend PATH "$BUN_INSTALL/bin"
 {{ end }}
 
 # UV
 set -gx UV_PYTHON_PREFERENCE only-managed
-
-# libvirt
-set -gx LIBVIRT_DEFAULT_URI "qemu:///system"
 
 # direnv
 direnv hook fish | source
 
 # fzf
 fzf --fish | source
-
-# 1Password
-{{ if ne .chezmoi.os "linux" }}
-set -gx SSH_AUTH_SOCK "$HOME/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock"
-{{ end }}
 
 # Starship
 set -gx STARSHIP_CONFIG "$HOME/.config/starship/starship.toml"
@@ -75,7 +56,6 @@ alias ls="eza --icons"
 alias lt="eza --tree --level=2 --long --icons --git"
 alias ltree="eza --tree --level=2  --icons --git"
 alias mc="mc"
-alias venv="source ./.venv/bin/activate"
 alias vim="nvim"
 alias v="nvim"
 alias zj="zellij"
