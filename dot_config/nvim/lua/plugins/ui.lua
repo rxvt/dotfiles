@@ -1,13 +1,10 @@
 return {
-  {{ if eq .osid "darwin" -}}
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "catppuccin-macchiato",
-      colorscheme = "tokyonight-storm",
+      colorscheme = "catppuccin-macchiato",
     },
   },
-  {{ end -}}
   {
     "folke/noice.nvim",
     opts = {
