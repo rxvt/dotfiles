@@ -7,6 +7,6 @@ font-thicken = false
 font-style-bold = false
 shell-integration-features = no-cursor,ssh-env
 macos-option-as-alt = true
-macos-non-native-fullscreen = true
+macos-non-native-fullscreen = visible-menu
 cursor-style = "block"
 cursor-style-blink = false
