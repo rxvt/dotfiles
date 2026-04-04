@@ -3,17 +3,17 @@ Host *
     UseKeychain yes
     ForwardAgent yes
   {{- if eq .osid "darwin" }}
-    {{ if not .work -}}
+    {{- if not .work }}
     IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
     {{- end }}
-  {{ else }}
+  {{- else }}
     IdentityAgent "~/.1password/agent.sock"
-  {{- end }}
+  {{- end -}}
 
-{{ if not .work -}}
+{{- if not .work }}
 Host media
     Hostname 192.168.4.101
 
 Host omarchy
     Hostname 192.168.4.166
-{{ end }}
+{{- end }}
