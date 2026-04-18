@@ -8,12 +8,11 @@ Host *
     {{- end }}
   {{- else }}
     IdentityAgent "~/.1password/agent.sock"
-  {{- end -}}
-
-{{- if not .work }}
+  {{- end }}
+{{ if not .work }}
 Host media
     Hostname 192.168.4.101
 
-Host omarchy
-    Hostname 192.168.4.166
+Host test1
+    Hostname 192.168.4.190
 {{- end }}
