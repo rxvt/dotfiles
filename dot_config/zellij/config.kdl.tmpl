@@ -154,6 +154,8 @@ keybinds clear-defaults=true {
         bind "Alt n" { NewTab; }
         bind "Alt o" { MoveTab "right"; }
         bind "Alt e" { EditScrollback; SwitchToMode "locked"; }
+        bind "Alt m" { ToggleFocusFullscreen; SwitchToMode "locked"; }
+
     }
     shared_except "locked" "renametab" "renamepane" {
         bind "Ctrl g" { SwitchToMode "locked"; }
