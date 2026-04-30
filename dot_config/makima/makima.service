@@ -1,0 +1,16 @@
+# You need to put this into /usr/lib/systemd/system/makima.service
+# sudo systemctl enable --now makima.service
+[Unit]
+Description=Makima remapping daemon
+
+[Service]
+Type=simple
+Environment="MAKIMA_CONFIG=/home/shane/.config/makima"
+ExecStart=/usr/bin/makima
+Restart=always
+RestartSec=3
+User=shane
+Group=input
+
+[Install]
+WantedBy=default.target

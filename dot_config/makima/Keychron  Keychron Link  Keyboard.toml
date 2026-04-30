@@ -1,0 +1,7 @@
+[remap]
+KEY_LEFTCTRL-KEY_A = ["KEY_HOME"]
+KEY_LEFTCTRL-KEY_E = ["KEY_END"]
+
+[settings]
+GRAB_DEVICE = "true"
+
