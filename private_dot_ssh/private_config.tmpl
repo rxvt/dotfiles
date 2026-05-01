@@ -12,8 +12,9 @@ Host *
 {{ if not .work }}
 Host media
     Hostname 192.168.4.101
+    SetEnv TERM=xterm-256color
 
-Host test1
-    Hostname 192.168.4.190
+Host rocky10
+    Hostname 192.168.122.112
     SetEnv TERM=xterm-256color
 {{- end }}
