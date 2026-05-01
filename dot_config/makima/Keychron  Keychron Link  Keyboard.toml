@@ -1,4 +1,8 @@
 [remap]
+# SUPER + A = Select All
+"KEY_LEFTALT-KEY_A" = ["KEY_LEFTCTRL", "KEY_A"]
+
+# CTRL-A and CTRL-E work like in MacOS
 KEY_LEFTCTRL-KEY_A = ["KEY_HOME"]
 KEY_LEFTCTRL-KEY_E = ["KEY_END"]
 
