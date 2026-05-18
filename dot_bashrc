@@ -9,6 +9,22 @@ source ~/.local/share/omarchy/default/bash/rc
 #
 # Make an alias for invoking commands you use constantly
 # alias p='python'
+
+tmux_attach_or_new() {
+  local session="${1:?Usage: tmux_attach_or_new <session-name>}"
+
+  if [[ -n "$TMUX" ]]; then
+    echo "Already inside a tmux session. Use 'tmux switch-client -t $session' instead." >&2
+    return 1
+  fi
+
+  if tmux has-session -t "$session" 2>/dev/null; then
+    tmux attach-session -t "$session"
+  else
+    tmux new-session -s "$session"
+  fi
+}
+
 alias ca='chezmoi apply'
 alias cad='chezmoi add'
 alias ccd='chezmoi cd'
@@ -18,5 +34,6 @@ alias cv='chezmoi verify'
 alias gp='git pull'
 alias gs='git status'
 alias lg='lazygit'
+alias tn='tmux_attach_or_new'
 alias v='nvim'
 alias vim='nvim'
