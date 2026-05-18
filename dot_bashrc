@@ -27,6 +27,7 @@ tmux_attach_or_new() {
 
 alias ca='chezmoi apply'
 alias cad='chezmoi add'
+alias cat='bat'
 alias ccd='chezmoi cd'
 alias ce='chezmoi edit'
 alias cra='chezmoi re-add --verbose'
