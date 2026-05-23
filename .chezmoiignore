@@ -9,6 +9,7 @@ README.md
 Library
 .dir_colors
 .config/ghostty
+.config/ssh
 .hushlogin
 {{ end }}
 {{ if ne .chezmoi.os "linux" }}
