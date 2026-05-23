@@ -8,7 +8,7 @@ README.md
 {{ if ne .chezmoi.os "darwin" }}
 Library
 .dir_colors
-.config/ghostty/themes
+.config/ghostty
 .hushlogin
 {{ end }}
 {{ if ne .chezmoi.os "linux" }}
