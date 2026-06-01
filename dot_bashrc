@@ -57,6 +57,8 @@ alias v='nvim'
 alias vim='nvim'
 
 # Must go at end
-eval "$(zoxide init --cmd cd bash)"
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init bash)"
+
+# Must go literally on the last line
+eval "$(zoxide init --cmd cd bash)"
