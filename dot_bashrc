@@ -18,6 +18,7 @@ fi
 # Make an alias for invoking commands you use constantly
 # alias p='python'
 
+# Functions
 tmux_attach_or_new() {
   local session="${1:?Usage: tmux_attach_or_new <session-name>}"
 
@@ -33,6 +34,7 @@ tmux_attach_or_new() {
   fi
 }
 
+# Environment Variables
 alias ca='chezmoi apply'
 alias cad='chezmoi add'
 alias cat='bat'
