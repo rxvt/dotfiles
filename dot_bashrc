@@ -35,6 +35,7 @@ tmux_attach_or_new() {
 }
 
 # Environment Variables
+# Aliases
 alias ca='chezmoi apply'
 alias cad='chezmoi add'
 alias cat='bat'
