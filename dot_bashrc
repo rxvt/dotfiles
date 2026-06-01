@@ -47,3 +47,7 @@ alias ll='ls -l'
 alias tn='tmux_attach_or_new'
 alias v='nvim'
 alias vim='nvim'
+
+# Must go at end
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+eval "$(starship init bash)"
