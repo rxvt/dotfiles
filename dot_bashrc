@@ -1,6 +1,11 @@
 # If not running interactively, don't do anything (leave this at the top of this file)
 [[ $- != *i* ]] && return
 
+# Homebrew
+if [[ -f /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # All the default Omarchy aliases and functions
 # (don't mess with these directly, just overwrite them here!)
 OMARCHY_BASHRC="$HOME/.local/share/omarchy/default/bash/rc"
