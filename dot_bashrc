@@ -36,6 +36,8 @@ tmux_attach_or_new() {
 
 # Environment Variables
 export HOMEBREW_NO_AUTO_UPDATE=1
+export UV_PYTHON_PREFERENCE=only-managed
+
 # Aliases
 alias ca='chezmoi apply'
 alias cad='chezmoi add'
@@ -44,6 +46,8 @@ alias ccd='chezmoi cd'
 alias ce='chezmoi edit'
 alias cra='chezmoi re-add --verbose'
 alias cv='chezmoi verify'
+alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
+alias ffe='$EDITOR "$(ff)"'
 alias gp='git pull'
 alias gs='git status'
 alias lg='lazygit'
