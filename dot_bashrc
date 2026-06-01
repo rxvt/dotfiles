@@ -3,7 +3,10 @@
 
 # All the default Omarchy aliases and functions
 # (don't mess with these directly, just overwrite them here!)
-source ~/.local/share/omarchy/default/bash/rc
+OMARCHY_BASHRC="$HOME/.local/share/omarchy/default/bash/rc"
+if [[ -f $OMARCHY_BASHRC ]]; then
+  source $OMARCHY_BASHRC
+fi
 
 # Add your own exports, aliases, and functions here.
 #
