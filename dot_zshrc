@@ -72,7 +72,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew direnv eza fzf zoxide {{- if .work }} atlassian {{- end -}})
+plugins=(brew direnv eza fzf zoxide)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -103,36 +103,26 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Aliases
-alias caa="chezmoi add"
-alias ca="chezmoi apply"
-alias cat="bat"
-alias ccd="chezmoi cd"
-alias ce="chezmoi edit"
-alias cv="chezmoi verify"
-alias fzfp="fzf --preview 'bat --color=always {}'"
-alias grep="rg"
-alias lg="lazygit"
-alias mc="VIEWER=mc_pager mc"
-alias vim="nvim"
-alias v="nvim"
-alias venv="source ./.venv/bin/activate"
-alias zj="zellij"
+# Functions
+tmux_attach_or_new() {
+  local session="${1:?Usage: tmux_attach_or_new <session-name>}"
 
-## Customisations
+  if [[ -n "$TMUX" ]]; then
+    echo "Already inside a tmux session. Use 'tmux switch-client -t $session' instead." >&2
+    return 1
+  fi
+
+  if tmux has-session -t "$session" 2>/dev/null; then
+    tmux attach-session -t "$session"
+  else
+    tmux new-session -s "$session"
+  fi
+}
+
 #
 if [ -f $HOME/.zsh_work ]; then
   source $HOME/.zsh_work
-  export PATH="/Users/sanderson/.orbit/bin:$PATH"
 fi
-
-# NVM
-{{- if eq .osid "darwin" -}}
-NVM_HOMEBREW=$(brew --prefix nvm)
-{{ end -}}
-
-# Created by `pipx` on 2022-10-28 04:02:07
-export PATH="$PATH:$HOME/.local/bin"
 
 # Stop the hostname appearing in the prompt
 DEFAULT_USER=$USER
@@ -147,22 +137,9 @@ setopt BASH_AUTO_LIST
 zstyle ':completion:*:*:docker:*' optional-stacking yes
 zstyle ':completion:*:*:docker-:*' optional-stacking yes
 
-# Nord dircolors theme
-if [[ -f "${HOME}/.dir_colors" ]]; then
-  {{ if eq .osid "darwin" -}}
-      eval $(/opt/homebrew/opt/coreutils/libexec/gnubin/dircolors ~/.dir_colors)
-  {{- else -}}
-      eval $(/usr/bin/dircolors ~/.dir_colors)
-  {{- end }}
-fi
-
 if [ ! -f ${HOME}/.zsh_work ]; then
-# 1Password SSH integration
-{{- if eq .osid "darwin"}}
-export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
-{{ else -}}
-export SSH_AUTH_SOCK=~/.1password/agent.sock
-{{ end -}}
+  # 1Password SSH integration
+  export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 fi
 
 # Disable homebrew upgrades on install
@@ -176,6 +153,23 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 # ZSH zsh-autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Aliases
+alias cad="chezmoi add"
+alias ca="chezmoi apply"
+alias cat="bat"
+alias ccd="chezmoi cd"
+alias ce="chezmoi edit"
+alias cv="chezmoi verify"
+alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
+alias ffe='$EDITOR "$(ff)"'
+alias lg="lazygit"
+alias mc="VIEWER=mc_pager mc"
+alias gp='git pull'
+alias gs='git status'
+alias vim="nvim"
+alias v="nvim"
+alias zj="ZELLIJ_SOCKET_DIR=/tmp/zellij-test zellij"
 
 # Starship
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
