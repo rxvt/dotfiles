@@ -119,7 +119,6 @@ tmux_attach_or_new() {
   fi
 }
 
-#
 if [ -f $HOME/.zsh_work ]; then
   source $HOME/.zsh_work
 fi
@@ -138,37 +137,29 @@ zstyle ':completion:*:*:docker:*' optional-stacking yes
 zstyle ':completion:*:*:docker-:*' optional-stacking yes
 
 if [ ! -f ${HOME}/.zsh_work ]; then
-  # 1Password SSH integration
   export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 fi
 
-# Disable homebrew upgrades on install
 export HOMEBREW_NO_AUTO_UPDATE=1
-
-# UV
 export UV_PYTHON_PREFERENCE=only-managed
-
-# asdf
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 # ZSH zsh-autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Aliases
-alias cad="chezmoi add"
 alias ca="chezmoi apply"
+alias cad="chezmoi add"
 alias cat="bat"
 alias ccd="chezmoi cd"
 alias ce="chezmoi edit"
 alias cv="chezmoi verify"
 alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
 alias ffe='$EDITOR "$(ff)"'
-alias lg="lazygit"
-alias mc="VIEWER=mc_pager mc"
 alias gp='git pull'
 alias gs='git status'
-alias vim="nvim"
+alias lg="lazygit"
 alias v="nvim"
+alias vim="nvim"
 alias zj="ZELLIJ_SOCKET_DIR=/tmp/zellij-test zellij"
 
 # Starship
