@@ -54,6 +54,7 @@ alias ffe='$EDITOR "$(ff)"'
 alias gp='git pull'
 alias gs='git status'
 alias lg="lazygit"
+alias tn='tmux_attach_or_new'
 alias v="nvim"
 alias vim="nvim"
 alias zj="ZELLIJ_SOCKET_DIR=/tmp/zellij-test zellij"
