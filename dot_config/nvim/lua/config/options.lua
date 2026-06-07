@@ -4,3 +4,4 @@
 vim.o.scrolloff = 5
 vim.g.lazyvim_python_lsp = "ty"
 vim.opt.relativenumber = false
+vim.opt.mouse = ""
