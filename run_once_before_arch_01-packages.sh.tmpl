@@ -1,6 +1,5 @@
 {{- if eq .osid "linux-arch" -}}
 #!/usr/bin/bash
-
 #
 # Package installation
 #
@@ -14,7 +13,6 @@ yay -S \
   duf \
   eza \
   fd \
-  fish \
   fzf \
   git-delta \
   go \
@@ -33,5 +31,6 @@ yay -S \
   yazi \
   zellij \
   zoxide
+  zsh \
 
 {{ end -}}
