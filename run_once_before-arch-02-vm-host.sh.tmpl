@@ -1,6 +1,6 @@
 {{- if .linux-vm-host }}
 #!/usr/bin/bash
-pacman -Sy \
+sudo pacman -Sy \
   dnsmasq \
   iptables-nft
 sudo systemctl enable --now libvirtd.service
