@@ -2,7 +2,9 @@
 #!/usr/bin/bash
 sudo pacman -Sy \
   dnsmasq \
-  iptables-nft
+  iptables-nft \
+  podman \
+  podman-compose
 sudo systemctl enable --now libvirtd.service
 sudo usermod -aG libvirt $(whoami)
 sudo virsh net-start default
