@@ -1,0 +1,14 @@
+{{- if .linux-vm-host }}
+#!/usr/bin/bash
+pacman -Sy \
+  dnsmasq \
+  iptables-nft
+sudo systemctl enable --now libvirtd.service
+sudo usermod -aG libvirt $(whoami)
+sudo virsh net-start default
+sudo virsh net-autostart default
+sudo ufw allow in on virbr0
+sudo ufw allow out on virbr0
+sudo ufw default allow routed
+sudo ufw reload
+{{ end }}

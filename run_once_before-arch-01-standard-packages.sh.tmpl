@@ -1,36 +1,24 @@
 {{- if eq .osid "linux-arch" -}}
 #!/usr/bin/bash
-#
-# Package installation
-#
-
-yay -S \
-  aws-cli-v2 \
+pacman -Sy \
+  chezmoi \
   bandwhich \
   bat \
-  direnv \
   doggo \
   duf \
   eza \
   fd \
   fzf \
-  git-delta \
-  go \
-  jq \
   lazygit \
   ncdu \
   neovim \
-  npm \
   podman \
   podman-compose \
   ripgrep \
   sd \
   starship \
-  ttf-hack-nerd \
-  uv \
-  yazi \
-  zellij \
-  zoxide
-  zsh \
-
-{{ end -}}
+  zoxide \
+  openssh \
+  tmux \
+  zsh
+{{ end }}

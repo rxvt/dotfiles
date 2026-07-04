@@ -1,0 +1,13 @@
+{{- if .linux-development }}
+#!/usr/bin/bash
+pacman -Sy \
+  aws-cli-v2 \
+  clang \
+  direnv \
+  gcc \
+  git-delta \
+  go \
+  jq \
+  npm \
+  uv
+{{ end }}
