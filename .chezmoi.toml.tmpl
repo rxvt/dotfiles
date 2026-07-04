@@ -9,8 +9,8 @@ osid = {{ $osid | quote }}
 {{- $work := promptBoolOnce . "work" "Is this a work machine" }}
 work = {{ $work }}
 
-{{- $linux-vm-host := promptBoolOnce . "linux-vm-host" "Is this machine a Linux VM Host?" }}
-linux-vm-host = {{ $linux-vm-host }}
+{{- $linux_vm_host := promptBoolOnce . "linux_vm_host" "Is this machine a Linux VM Host?" }}
+linux_vm_host = {{ $linux_vm_host }}
 
-{{- $linux-development := promptBoolOnce . "linux-development" "Is this a Linux Development host?" }}
-linux-development = {{ $linux-development }}
+{{- $linux_development := promptBoolOnce . "linux_development" "Is this a Linux Development host?" }}
+linux_development = {{ $linux_development }}
