@@ -1,6 +1,6 @@
 {{- if eq .osid "linux-arch" -}}
 #!/usr/bin/bash
-sudo pacman -Sy \
+sudo pacman -Sy --needed \
   chezmoi \
   bandwhich \
   bat \

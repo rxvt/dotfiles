@@ -1,6 +1,6 @@
 {{- if .linux_development -}}
 #!/usr/bin/bash
-sudo pacman -Sy \
+sudo pacman -Sy --needed \
   aws-cli-v2 \
   clang \
   direnv \
