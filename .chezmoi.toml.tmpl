@@ -11,6 +11,3 @@ work = {{ $work }}
 
 {{- $linux_vm_host := promptBoolOnce . "linux_vm_host" "Is this machine a Linux VM Host?" }}
 linux_vm_host = {{ $linux_vm_host }}
-
-{{- $linux_development := promptBoolOnce . "linux_development" "Is this a Linux Development host?" }}
-linux_development = {{ $linux_development }}
