@@ -15,7 +15,3 @@ Library
 .config/hypr
 .config/makima
 {{ end }}
-
-{{ if ne .linux_development true }}
-.config/nvim/lua/plugins/colorscheme.lua
-{{ end }}
