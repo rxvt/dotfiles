@@ -1,0 +1,22 @@
+{{- if eq .osid "linux-arch" -}}
+#!/usr/bin/bash
+sudo pacman -Sy --needed \
+  chezmoi \
+  bandwhich \
+  bat \
+  doggo \
+  duf \
+  eza \
+  fd \
+  fzf \
+  lazygit \
+  ncdu \
+  neovim \
+  ripgrep \
+  sd \
+  starship \
+  zoxide \
+  openssh \
+  tmux \
+  zsh
+{{ end }}

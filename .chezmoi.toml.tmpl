@@ -4,6 +4,13 @@
 {{- end -}}
 
 [data]
+osid = {{ $osid | quote }}
+
 {{- $work := promptBoolOnce . "work" "Is this a work machine" }}
 work = {{ $work }}
-osid = {{ $osid | quote }}
+
+{{- $linux_vm_host := promptBoolOnce . "linux_vm_host" "Is this machine a Linux VM Host?" }}
+linux_vm_host = {{ $linux_vm_host }}
+
+{{- $linux_development := promptBoolOnce . "linux_development" "Is this a Linux Development host?" }}
+linux_development = {{ $linux_development }}

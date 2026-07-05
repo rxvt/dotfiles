@@ -1,0 +1,13 @@
+{{- if .linux_development -}}
+#!/usr/bin/bash
+sudo pacman -Sy --needed \
+  aws-cli-v2 \
+  clang \
+  direnv \
+  gcc \
+  git-delta \
+  go \
+  jq \
+  npm \
+  uv
+{{ end }}
