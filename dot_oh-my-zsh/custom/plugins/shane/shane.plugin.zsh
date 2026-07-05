@@ -1,3 +1,5 @@
+export PATH="${HOME}/.local/bin:${PATH}"
+
 # Functions
 tmux_attach_or_new() {
   local session="${1:?Usage: tmux_attach_or_new <session-name>}"
