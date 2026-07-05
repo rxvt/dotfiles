@@ -6,6 +6,9 @@
 [data]
 osid = {{ $osid | quote }}
 
+{{- $fedora_development := promptBoolOnce . "fedora_development" "Is this a Fedora Development host?" }}
+fedora_develpment = {{ $fedora_development }}
+
 {{- $work := promptBoolOnce . "work" "Is this a work machine" }}
 work = {{ $work }}
 
