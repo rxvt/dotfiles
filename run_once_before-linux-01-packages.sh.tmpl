@@ -1,0 +1,65 @@
+{{- if eq .chezmoi.os "linux" -}}
+#!/usr/bin/bash
+
+{{ if eq .osid "linux-arch" }}
+sudo pacman -Sy --needed \
+  aws-cli-v2 \
+  bandwhich \
+  bat \
+  chezmoi \
+  clang \
+  direnv \
+  doggo \
+  duf \
+  eza \
+  fd \
+  fzf \
+  gcc \
+  git-delta \
+  go \
+  jq \
+  lazygit \
+  ncdu \
+  neovim \
+  npm \
+  openssh \
+  ripgrep \
+  sd \
+  starship \
+  tmux \
+  uv \
+  zoxide \
+  zsh
+{{ end }}
+
+{{ if eq .osid "linux-fedora" }}
+sudo dnf distro-sync -y
+sudo dnf install \
+  bat \
+  chezmoi \
+  clang \
+  direnv \
+  duf \
+  eza \
+  fd \
+  fzf \
+  git \
+  git-delta \
+  jq \
+  ncdu \
+  neovim \
+  npm \
+  ripgrep \
+  tmux \
+  uv \
+  zsh
+
+# These are not availble in Fedora yet
+#  bandwhich \
+#  doggo \
+#  lazygit \
+#  sd \
+#  starship \
+{{ end }}
+
+{{ end }}
