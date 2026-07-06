@@ -1,5 +1,6 @@
 {{- if eq .chezmoi.os "linux" -}}
 #!/usr/bin/bash
+set -euo pipefail
 
 {{ if eq .osid "linux-arch" }}
 sudo pacman -Sy --needed \

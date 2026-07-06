@@ -1,6 +1,7 @@
 {{- if eq .osid "darwin" -}}
 #!/bin/bash
 # A lot of these taken from https://macos-defaults.com/
+set -euo pipefail
 
 # Set function keys to work as standard function keys
 defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
