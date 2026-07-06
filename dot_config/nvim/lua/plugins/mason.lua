@@ -22,7 +22,6 @@ return {
       "ruff",
       "shellcheck",
       "shfmt",
-      "stylua",
       "taplo",
       "yaml-language-server",
     })
