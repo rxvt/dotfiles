@@ -1,0 +1,12 @@
+{{- if eq .osid "linux-fedora" -}}
+#!/usr/bin/bash
+set -euo pipefail
+
+if ! command -v opencode; then
+    echo "OpenCode not installed — installing..."
+    sudo npm i -g opencode-ai
+else
+    echo "OpenCode already installed"
+fi
+
+{{ end }}
