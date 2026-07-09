@@ -1,8 +1,7 @@
-{{- if eq .chezmoi.os "linux" -}}
+{{- if eq .osid "linux-arch" -}}
 #!/usr/bin/bash
 set -euo pipefail
 
-{{ if eq .osid "linux-arch" }}
 sudo pacman -Sy --needed \
   aws-cli-v2 \
   bandwhich \
@@ -30,41 +29,5 @@ sudo pacman -Sy --needed \
   tmux \
   unzip \
   uv \
-  zoxide \
-  zsh
-{{ end }}
-
-{{ if eq .osid "linux-fedora" }}
-sudo dnf distro-sync -y
-sudo dnf install \
-  bat \
-  chezmoi \
-  clang \
-  direnv \
-  duf \
-  eza \
-  fd \
-  fzf \
-  git \
-  git-delta \
-  golang \
-  jq \
-  ncdu \
-  neovim \
-  npm \
-  ripgrep \
-  tmux \
-  uv \
-  zoxide \
-  zsh
-
-# These are not availble in Fedora yet
-#  bandwhich \
-#  doggo \
-#  lazygit \
-#  opencode \
-#  sd \
-#  starship \
-{{ end }}
-
+  zoxide
 {{ end }}

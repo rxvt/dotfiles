@@ -1,0 +1,49 @@
+{{- if eq .osid "linux-fedora" -}}
+#!/usr/bin/bash
+set -euo pipefail
+
+sudo dnf distro-sync -y
+sudo dnf install -y \
+  bat \
+  chezmoi \
+  clang \
+  direnv \
+  duf \
+  eza \
+  fd \
+  fzf \
+  git \
+  git-delta \
+  golang \
+  jq \
+  ncdu \
+  neovim \
+  npm \
+  ripgrep \
+  tmux \
+  uv \
+  zoxide
+
+{{ if .terra}}
+if ! rpm -q terra-gpg-keys >/dev/null 2>&1; then
+    echo "terra-gpg-keys not installed — installing..."
+    sudo dnf install --nogpgcheck \
+        --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' \
+        terra-release terra-gpg-keys
+else
+    echo "Terra GPG keys package is already installed."
+fi
+
+sudo dnf install -y \
+  bandwhich \
+  lazygit \
+  podman \
+  podman-compose \
+  starship
+{{ end }}
+
+# These are not availble in Fedora yet
+#  opencode \
+#  sd \
+
+{{ end }}
