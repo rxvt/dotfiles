@@ -2,6 +2,8 @@ LICENSE
 README.md
 {{ if eq .work false -}}
 .zsh_work
+.zshrc
+.oh-my-zsh
 {{- end }}
 {{ if ne .chezmoi.os "darwin" }}
 Library
