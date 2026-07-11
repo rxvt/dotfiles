@@ -6,7 +6,11 @@ font-style = Regular
 font-size = 14
 font-thicken = false
 font-style-bold = false
+{{ if .work }}
+shell-integration-features = none
+{{ else }}
 shell-integration-features = no-cursor,ssh-env
+{{ end }}
 macos-option-as-alt = true
 macos-non-native-fullscreen = visible-menu
 cursor-style = "block"
