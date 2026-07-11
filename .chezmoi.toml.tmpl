@@ -11,3 +11,6 @@ work = {{ $work }}
 
 {{- $linux_vm_host := promptBoolOnce . "linux_vm_host" "Is this machine a Linux VM Host?" }}
 linux_vm_host = {{ $linux_vm_host }}
+
+{{- $terra := promptBoolOnce . "terra" "Use Terra RPM repo?" }}
+terra = {{ $terra }}

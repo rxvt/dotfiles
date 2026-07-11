@@ -10,6 +10,14 @@ sudo pacman -Sy --needed \
   podman-compose
 {{ end }}
 
+{{ if eq .osid "linux-fedora" }}
+sudo dnf install -y
+  dnsmasq \
+  iptables-nft \
+  podman \
+  podman-compose
+{{ end }}
+
 sudo systemctl enable --now libvirtd.service
 sudo usermod -aG libvirt $(whoami)
 sudo virsh net-start default

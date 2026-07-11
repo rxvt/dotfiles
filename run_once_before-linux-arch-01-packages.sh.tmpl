@@ -1,0 +1,33 @@
+{{- if eq .osid "linux-arch" -}}
+#!/usr/bin/bash
+set -euo pipefail
+
+sudo pacman -Sy --needed \
+  aws-cli-v2 \
+  bandwhich \
+  bat \
+  chezmoi \
+  clang \
+  direnv \
+  doggo \
+  duf \
+  eza \
+  fd \
+  fzf \
+  git-delta \
+  go \
+  jq \
+  lazygit \
+  ncdu \
+  neovim \
+  npm \
+  openssh \
+  opencode \
+  ripgrep \
+  sd \
+  starship \
+  tmux \
+  unzip \
+  uv \
+  zoxide
+{{ end }}

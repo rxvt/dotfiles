@@ -1,6 +1,9 @@
 # If not running interactively, don't do anything (leave this at the top of this file)
 [[ $- != *i* ]] && return
 
+# Path
+export PATH="${HOME}/.local/bin:${HOME}/go/bin:${PATH}"
+
 # Homebrew
 if [[ -f /opt/homebrew/bin/brew ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -17,6 +20,17 @@ fi
 #
 # Make an alias for invoking commands you use constantly
 # alias p='python'
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  if command -v nvim &> /dev/null; then
+      export EDITOR='nvim'
+  else
+      export EDITOR='vim'
+  fi
+else
+  export EDITOR='nvim'
+fi
 
 # Functions
 tmux_attach_or_new() {
@@ -52,7 +66,9 @@ alias gp='git pull'
 alias gs='git status'
 alias lg='lazygit'
 alias ll='ls -l'
+alias ta='tmux attach'
 alias tn='tmux_attach_or_new'
+alias ts='tmux list-sessions'
 alias v='nvim'
 alias vim='nvim'
 
