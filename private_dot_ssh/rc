@@ -1,0 +1,6 @@
+# vim: ft=bash
+# to reconnect ssh-agent through a disconnected session
+if [ -n "${SSH_AUTH_SOCK}" ]; then
+    ln -snf "${SSH_AUTH_SOCK}" "${HOME}/.ssh/tmux_ssh_auth_sock" # symlink read in ~/.tmux.conf
+fi
+
