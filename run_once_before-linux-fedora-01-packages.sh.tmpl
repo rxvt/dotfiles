@@ -29,7 +29,7 @@ sudo dnf install -y \
 {{ if .terra}}
 if ! rpm -q terra-gpg-keys >/dev/null 2>&1; then
     echo "terra-gpg-keys not installed — installing..."
-    sudo dnf install --nogpgcheck \
+    sudo dnf install --nogpgcheck -y \
         --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' \
         terra-release terra-gpg-keys
     sudo sed -i \
