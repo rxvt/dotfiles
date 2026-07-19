@@ -32,6 +32,7 @@ if ! rpm -q terra-gpg-keys >/dev/null 2>&1; then
     sudo dnf install --nogpgcheck \
         --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' \
         terra-release terra-gpg-keys
+    sudo dnf update
 else
     echo "Terra GPG keys package is already installed."
 fi
