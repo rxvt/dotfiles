@@ -32,6 +32,9 @@ else
   export EDITOR='nvim'
 fi
 
+# Setup direv
+eval "$(direnv hook bash)"
+
 # Functions
 tmux_attach_or_new() {
   local session="${1:?Usage: tmux_attach_or_new <session-name>}"
@@ -72,6 +75,7 @@ alias tn='tmux_attach_or_new'
 alias ts='tmux list-sessions'
 alias v='nvim'
 alias vim='nvim'
+
 
 # Must go at end
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
