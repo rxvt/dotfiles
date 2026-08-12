@@ -5,6 +5,9 @@ README.md
 .zshrc
 .oh-my-zsh
 {{- end }}
+{{ if eq .work true }}
+.ssh/config
+{{ end }}
 {{ if ne .chezmoi.os "darwin" }}
 Library
 .dir_colors
