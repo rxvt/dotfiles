@@ -4,9 +4,7 @@ font-style = Regular
 font-size = 14
 font-thicken = false
 font-style-bold = false
-{{ if .work }}
-shell-integration-features = none
-{{ else }}
+{{ if not .work }}
 shell-integration-features = no-cursor,ssh-env
 {{ end }}
 macos-option-as-alt = true
