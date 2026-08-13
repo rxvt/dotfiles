@@ -21,6 +21,7 @@ resize_mode = "prefix+]"
 split_horizontal = "prefix+minus"
 split_vertical = "prefix+|"
 switch_tab = "alt+1..9"
+zoom = "alt+m"
 
 [ui]
 prompt_new_tab_name = false
