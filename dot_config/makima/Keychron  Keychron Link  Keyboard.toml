@@ -1,10 +1,23 @@
+# Remember that these Key Names are not swapped, e.g. SUPER + ALT as in Hypr
+# These mappings replicate macOS
+
 [remap]
-# SUPER + A = Select All
+# COMMAND + A = Select All
 "KEY_LEFTALT-KEY_A" = ["KEY_LEFTCTRL", "KEY_A"]
 
-# CTRL-A and CTRL-E work like in MacOS
+# CTRL-A and CTRL-E move to start and end of line
 KEY_LEFTCTRL-KEY_A = ["KEY_HOME"]
 KEY_LEFTCTRL-KEY_E = ["KEY_END"]
+
+# ALT + BACKSPACE deletes word
+KEY_LEFTMETA-KEY_BACKSPACE = ["KEY_LEFTCTRL", "KEY_BACKSPACE"]
+
+# COMMAND + BACKSPACE deletes entire line
+KEY_LEFTALT-KEY_BACKSPACE = ["KEY_LEFTCTRL", "KEY_LEFTSHIFT", "KEY_BACKSPACE"]
+
+# COMMAND + [ or ] navigate tabs
+KEY_LEFTALT-KEY_LEFTSHIFT-KEY_LEFTBRACE = ["KEY_LEFTCTRL", "KEY_PAGEUP"]
+KEY_LEFTALT-KEY_LEFTSHIFT-KEY_RIGHTBRACE = ["KEY_LEFTCTRL", "KEY_PAGEDOWN"]
 
 [settings]
 GRAB_DEVICE = "true"
