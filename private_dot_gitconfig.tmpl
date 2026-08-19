@@ -1,16 +1,11 @@
 [user]
 	name = Shane Anderson
-{{- if not .work }}
 	email = 17208811+rxvt@users.noreply.github.com
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAMShiJ2tu9PanMRrPQbE11Wswcr+z4Hu8pjRk46kyy8
-{{ else }}
-  email = {{ .chezmoi.username }}@atlassian.com
-{{ end -}}
 [core]
   autocrlf = input
 [init]
 	defaultBranch = main
-{{- if not .work }}
 [push]
 	followTags = true
 	autoSetupRemote = true
@@ -22,25 +17,9 @@
 [gpg]
 	format = ssh
 [gpg "ssh"]
-{{ if eq .chezmoi.os "darwin" }}
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
-{{ end }}
 [commit]
 	gpgsign = true
-{{ end }}
-{{ if .work }}
-[url "ssh://git@stash.atlassian.com:7997/"]
-  insteadOf = https://stash.atlassian.com/scm/
-
-[url "git@bitbucket.org:"]
-  insteadOf = https://bitbucket.org
-
-[trace2]
-  eventTarget = af_unix:{{ .chezmoi.homeDir }}/.gittrace/trace.sock
-  eventBrief = true
-  eventNesting = 1
-  configparams = custom.metacommand
-{{ end -}}
 
 [core]
   pager = delta
