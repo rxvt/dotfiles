@@ -32,10 +32,6 @@ else
   export EDITOR='nvim'
 fi
 
-{{ if eq .osid "linux-arch" }}
-export SSH_AUTH_SOCK=~/.1password/agent.sock
-{{ end }}
-
 # Setup direv
 eval "$(direnv hook bash)"
 
