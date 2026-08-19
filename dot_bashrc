@@ -68,7 +68,7 @@ alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
 alias ffe='$EDITOR "$(ff)"'
 alias gp='git pull'
 alias gs='git status'
-alias hr='herdr --remote'
+alias h='herdr'
 alias lg='lazygit'
 alias ll='ls -l'
 alias oc='opencode'
