@@ -16,10 +16,6 @@ tmux_attach_or_new() {
   fi
 }
 
-if [ -f "${HOME}/.zsh_work" ]; then
-  source "${HOME}/.zsh_work"
-fi
-
 # Stop the hostname appearing in the prompt
 DEFAULT_USER=$USER
 
@@ -33,9 +29,7 @@ setopt BASH_AUTO_LIST
 zstyle ':completion:*:*:docker:*' optional-stacking yes
 zstyle ':completion:*:*:docker-:*' optional-stacking yes
 
-if [ ! -f "${HOME}/.zsh_work" ]; then
-  export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
-fi
+export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 
 export HOMEBREW_NO_AUTO_UPDATE=1
 export UV_PYTHON_PREFERENCE=only-managed
