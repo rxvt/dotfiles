@@ -6,3 +6,6 @@ Host *
 
 Host media
     Hostname 192.168.4.101
+
+Host dev
+    Hostname 10.211.55.19
