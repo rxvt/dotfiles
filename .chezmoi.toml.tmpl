@@ -5,6 +5,3 @@
 
 [data]
 osid = {{ $osid | quote }}
-
-{{- $dev := promptBoolOnce . "dev" "macOS development environment?" }}
-dev = {{ $dev }}
