@@ -1,0 +1,36 @@
+{{- if eq .osid "linux-omarchy" -}}
+#!/usr/bin/bash
+set -euo pipefail
+
+sudo pacman -Sy --needed \
+  aws-cli-v2 \
+  bandwhich \
+  bat \
+  charm \
+  chezmoi \
+  clang \
+  direnv \
+  doggo \
+  duf \
+  eza \
+  fd \
+  fzf \
+  git-delta \
+  go \
+  jq \
+  lazygit \
+  ncdu \
+  neovim \
+  npm \
+  omarchy/makima-bin \
+  opencode \
+  openssh \
+  ripgrep \
+  sd \
+  starship \
+  tmux \
+  tuicr \
+  unzip \
+  uv \
+  zoxide
+{{ end }}
